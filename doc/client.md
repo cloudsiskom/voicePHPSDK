@@ -5,7 +5,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `environment` | Environment | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| `environment` | Environment | The API environment. <br> **Default: `Environment.MDN`** |
 | `timeout` | `int` | Timeout for API calls in seconds.<br>*Default*: `0` |
 | `enableRetries` | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | `numberOfRetries` | `int` | The number of retries to make.<br>*Default*: `0` |
@@ -21,13 +21,13 @@ The following parameters are configurable for the API Client:
 The API client can be initialized as follows:
 
 ```php
-$client = new VoiceAPILib\VoiceAPIClient([
+$client = new VoiceApiCallLib\VoiceApiCallClient([
     // Set authentication parameters
     'username' => 'username',
     'password' => 'password',
 
     // Set the environment
-    'environment' => 'production',
+    'environment' => 'MDN',
 ]);
 ```
 

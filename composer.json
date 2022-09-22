@@ -1,6 +1,7 @@
 {
-    "name": "apimatic/voiceapi",
+    "name": "provoice/voice-api",
     "description": "Voice API request",
+    "version": "1.0",
     "type": "library",
     "keywords": [
         "Voice API",
@@ -32,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VoiceAPILib\\": "src/"
+            "VoiceApiCallLib\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VoiceAPILib\\Tests\\": "tests/"
+            "VoiceApiCallLib\\Tests\\": "tests/"
         }
     },
     "scripts": {
