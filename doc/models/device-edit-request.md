@@ -17,9 +17,9 @@
 
 ```json
 {
-  "extension": "810000000002",
-  "device_owner": "yassuki",
-  "secret": "sahabatku"
+  "extension": "[DEVICE_EXTENSION]",
+  "device_owner": "[DEVICE_OWNER]",
+  "secret": "[DEVICE_SECRET]"
 }
 ```
 

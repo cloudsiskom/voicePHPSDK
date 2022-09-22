@@ -43,13 +43,13 @@ class TranslationControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "from_number": "62811949736",
-  "caller_didgateway": "6285757920463",
-  "called_d' .
-            'idgateway": "6285757920463",
-  "destination_number": "6285161422932",
-  "external_id":' .
-            ' "1000"
+  "from_number": "[FROM_NUMBER]",
+  "caller_didgateway": "[DID_GATEWAY]",
+  "called' .
+            '_didgateway": "[DID_GATEWAY]",
+  "destination_number": "[DESTINATION]",
+  "external_id' .
+            '": "[EXTERNAL_ID]"
 }'),
             'VoiceAPILib\Models\\TranslationSetupRequest'
         );

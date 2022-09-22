@@ -20,13 +20,13 @@ class QueueList implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data7[]
+     * @var Data6[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data7[] $data
+     * @param Data6[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class QueueList implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data7[]
+     * @return Data6[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class QueueList implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data7[] $data
+     * @param Data6[] $data
      */
     public function setData(array $data): void
     {

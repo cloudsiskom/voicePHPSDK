@@ -43,10 +43,10 @@ class RouteControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "did": "6285757920463",
-  "destination": "TRUNK",
-  "destination_detail": "CVAI"' .
-            '
+  "did": "[DID]",
+  "destination": "[DESTINATION]",
+  "destination_detail": "[DESTI' .
+            'NATION_DETAIL]"
 }'),
             'VoiceAPILib\Models\\RouteIncomingRequest'
         );
@@ -110,12 +110,12 @@ class RouteControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "route_name": "test",
-  "device": "8210000000001",
-  "route_to": "RANDOM",
-  "ro' .
-            'ute_detail": "RDM1",
-  "route_prefix": "198767"
+  "route_name": "[ROUTE_NAME]",
+  "device": "[DEVICE]",
+  "route_to": "[ROUTE_DESTI' .
+            'NATION]",
+  "route_detail": "[DESTINATION_DETAIL]",
+  "route_prefix": "[PREFIX]"
 }'),
             'VoiceAPILib\Models\\RouteOutgoingRequest'
         );
@@ -219,81 +219,81 @@ class RouteControllerTest extends TestCase
       "id": 57,
       "transa' .
                 'ction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285757920462",
-   ' .
-                '   "destination": "DTMFTEST",
+  ' .
+                '    "destination": "DTMFTEST",
       "destination_detail": null,
-      "create_date' .
-                '": "2022-08-23T22:57:32.000Z",
+      "create_dat' .
+                'e": "2022-08-23T22:57:32.000Z",
       "isActive": 1
     },
     {
-      "id": 65,' .
+      "id": 65,' .
                 '
       "transaction_id": null,
-      "customer_code": "YASS",
-      "did": "628559' .
-                '2055238",
+      "customer_code": "GOJEK",
+      "did": "6285' .
+                '592055238",
       "destination": "CVAI",
-      "destination_detail": "BANK_BKKN",
- ' .
-                '     "create_date": "2022-09-01T17:00:23.000Z",
+      "destination_detail": "BANK_BKKN",' .
+                '
+      "create_date": "2022-09-01T17:00:23.000Z",
       "isActive": 1
     },
-    {' .
-                '
+    ' .
+                '{
       "id": 69,
       "transaction_id": null,
-      "customer_code": "YASS",
-   ' .
-                '   "did": "02150995134",
-      "destination": "IVR",
-      "destination_detail": "' .
-                'TOKO_BUAH",
-      "create_date": "2022-09-14T02:37:27.000Z",
-      "isActive": 1
+      "customer_code": "GOJEK",
 ' .
-                '    },
+                '      "did": "02150995134",
+      "destination": "IVR",
+      "destination_detail"' .
+                ': "TOKO_BUAH",
+      "create_date": "2022-09-14T02:37:27.000Z",
+      "isActive": ' .
+                '1
+    },
     {
       "id": 72,
       "transaction_id": null,
-      "customer_code"' .
-                ': "YASS",
+      "customer_co' .
+                'de": "GOJEK",
       "did": "6285757920463",
       "destination": "TRUNK",
-      "dest' .
-                'ination_detail": "CVAI",
+      "' .
+                'destination_detail": "CVAI",
       "create_date": "2022-09-16T03:45:38.000Z",
-      "i' .
-                'sActive": 1
+    ' .
+                '  "isActive": 1
     }
   ],
   "outgoing_route": [
     {
       "id": 582,
-      "cus' .
-                'tomer_code": "YASS",
+      ' .
+                '"customer_code": "GOJEK",
       "extension": "ALL",
-      "route_to": "PROVIDER",
-    ' .
-                '  "route_detail": "6285592055236",
+      "route_to": "PROVIDER",' .
+                '
+      "route_detail": "6285592055236",
       "tech_prefix": "",
-      "create_date": "' .
-                '2022-09-14T19:40:24.000Z",
+      "create_dat' .
+                'e": "2022-09-14T19:40:24.000Z",
       "isActive": 1
     },
     {
-      "id": 583,
-  ' .
-                '    "customer_code": "YASS",
+      "id": 583' .
+                ',
+      "customer_code": "GOJEK",
       "extension": "8210000000001",
-      "route_to":' .
-                ' "RANDOM",
+      "rout' .
+                'e_to": "RANDOM",
       "route_detail": "RDM1",
       "tech_prefix": "198767",
-      "cr' .
-                'eate_date": "2022-09-16T03:45:44.000Z",
+   ' .
+                '   "create_date": "2022-09-16T03:45:44.000Z",
       "isActive": 1
     }
   ]

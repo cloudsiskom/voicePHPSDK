@@ -18,10 +18,10 @@
 
 ```json
 {
-  "action_type": "login",
-  "agent_code": "10002",
-  "extension": "8210000000001",
-  "agent_password": "4321"
+  "action_type": "[ACTION]",
+  "agent_code": "[AGENT_CODE]",
+  "extension": "[EXTENSION TO LOGIN]",
+  "agent_password": "[AGENT_PASSWORD]"
 }
 ```
 

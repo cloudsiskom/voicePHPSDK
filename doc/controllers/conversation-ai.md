@@ -37,10 +37,10 @@ function createIntent(CreateIntentRequest $body): void
 ## Example Usage
 
 ```php
-$body_aiName = 'BANK_BKKN';
-$body_displayName = 'kamu siapa yang buat';
-$body_trainingPhrases = 'kamu siapa yang buat;siapa yang buat;programmermu siapa';
-$body_messageTexts = 'Aku lahir dari batu !';
+$body_aiName = '[AI_NAME]';
+$body_displayName = '[DISPLAY_NAME';
+$body_trainingPhrases = '[TRAINING_PHRASE,SPARATED BY ;]';
+$body_messageTexts = '[RESPONSE_TEXT SPARATED BY ;]';
 $body = new Models\CreateIntentRequest(
     $body_aiName,
     $body_displayName,
@@ -77,8 +77,8 @@ function intentQuery(IntentQueryRequest $body): IntentQuery
 ## Example Usage
 
 ```php
-$body_aiName = 'BANK_BKKN';
-$body_trainingPhrases = 'WELCOME';
+$body_aiName = '[AI_NAME]';
+$body_trainingPhrases = '[TRAINING_PHRASE]';
 $body = new Models\IntentQueryRequest(
     $body_aiName,
     $body_trainingPhrases
@@ -183,10 +183,10 @@ function intentEdit(IntentEditRequest $body): IntentEdit
 ## Example Usage
 
 ```php
-$body_aiName = 'BANK_BKKN';
-$body_displayName = 'kamu siapa yang buat';
-$body_trainingPhrases = 'hi kamu siapa yang buat;siapa yang buat;programmermu siapa;apa yang kamu lakukan';
-$body_messageTexts = 'Aku lahir dari batu !;mau tauuu aja';
+$body_aiName = '[AI_NAME]';
+$body_displayName = '[DISPLAY_NAME]';
+$body_trainingPhrases = '[TRAINING_PHRASE,SPARATED BY ;]';
+$body_messageTexts = '[RESPONSE_TEXT SPARATED BY ;]';
 $body = new Models\IntentEditRequest(
     $body_aiName,
     $body_displayName,
@@ -258,8 +258,8 @@ function intentDelete(IntentDeleteRequest $body): IntentDelete
 ## Example Usage
 
 ```php
-$body_aiName = 'BANK_BKKN';
-$body_displayName = 'kamu siapa yang buat';
+$body_aiName = '[AI_NAME]';
+$body_displayName = '[DISPLAY_NAME]';
 $body = new Models\IntentDeleteRequest(
     $body_aiName,
     $body_displayName

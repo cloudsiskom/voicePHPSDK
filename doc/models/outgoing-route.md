@@ -23,7 +23,7 @@
 ```json
 {
   "id": 582,
-  "customer_code": "YASS",
+  "customer_code": "GOJEK",
   "extension": "ALL",
   "route_to": "PROVIDER",
   "route_detail": "6285592055236",

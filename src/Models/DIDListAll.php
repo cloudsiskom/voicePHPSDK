@@ -25,14 +25,14 @@ class DIDListAll implements \JsonSerializable
     private $total;
 
     /**
-     * @var Data13[]
+     * @var Data11[]
      */
     private $data;
 
     /**
      * @param bool $response
      * @param int $total
-     * @param Data13[] $data
+     * @param Data11[] $data
      */
     public function __construct(bool $response, int $total, array $data)
     {
@@ -82,7 +82,7 @@ class DIDListAll implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data13[]
+     * @return Data11[]
      */
     public function getData(): array
     {
@@ -95,7 +95,7 @@ class DIDListAll implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data13[] $data
+     * @param Data11[] $data
      */
     public function setData(array $data): void
     {

@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class CallController extends BaseController
 {
@@ -29,6 +28,16 @@ class CallController extends BaseController
     }
 
     /**
+     * SUPPORTED **LANGUAGE** :
+     *
+     * \* id-ID
+     * \* en-US
+     *
+     * **GENDER** :
+     *
+     * \* MALE
+     * \* FEMALE
+     *
      * @param Models\Blastrequest $body
      *
      * @return Models\Blast Response from the API call
@@ -38,7 +47,7 @@ class CallController extends BaseController
     public function blast(Models\Blastrequest $body): Models\Blast
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/call/blast';
+        $_queryUrl = $this->config->getBaseUri() . '/call/blast';
 
         //prepare headers
         $_headers = [

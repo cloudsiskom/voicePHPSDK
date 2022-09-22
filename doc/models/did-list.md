@@ -10,7 +10,7 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `response` | `bool` | Required | - | getResponse(): bool | setResponse(bool response): void |
-| `data` | [`Data12[]`](../../doc/models/data-12.md) | Required | - | getData(): array | setData(array data): void |
+| `data` | [`Data10[]`](../../doc/models/data-10.md) | Required | - | getData(): array | setData(array data): void |
 
 ## Example (as JSON)
 
@@ -18,7 +18,7 @@
 {
   "response": null,
   "data": {
-    "customer_code": "YASS",
+    "customer_code": "GOJEK",
     "id": 2,
     "active": 1,
     "did": "6285757920463",

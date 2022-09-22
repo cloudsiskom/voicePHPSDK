@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class IVRController extends BaseController
 {
@@ -29,6 +28,23 @@ class IVRController extends BaseController
     }
 
     /**
+     * ACTION:
+     *
+     * \*   new
+     * \*   edit
+     *
+     *
+     * LANG :
+     *
+     * \*   id-ID
+     * \*   en-US
+     *
+     *
+     * GENDER
+     *
+     * \*   MALE
+     * \*   FEMALE
+     *
      * @param Models\IVRNewRequest $body
      *
      * @return void Response from the API call
@@ -38,7 +54,7 @@ class IVRController extends BaseController
     public function iVRNew(Models\IVRNewRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ivr/new';
+        $_queryUrl = $this->config->getBaseUri() . '/ivr/new';
 
         //prepare headers
         $_headers = [
@@ -99,7 +115,7 @@ class IVRController extends BaseController
     public function iVRDelete(Models\IVRDeleteRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ivr/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/ivr/delete';
 
         //prepare headers
         $_headers = [
@@ -160,7 +176,7 @@ class IVRController extends BaseController
     public function iVRDeleteItem(Models\IVRDeleteItemRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ivr/deleteitem';
+        $_queryUrl = $this->config->getBaseUri() . '/ivr/deleteitem';
 
         //prepare headers
         $_headers = [
@@ -212,19 +228,18 @@ class IVRController extends BaseController
     }
 
     /**
-     * @return Models\IVRList Response from the API call
+     * @return string Response from the API call
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function iVRList(): Models\IVRList
+    public function iVRList(): string
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ivr/list';
+        $_queryUrl = $this->config->getBaseUri() . '/ivr/list';
 
         //prepare headers
         $_headers = [
             'user-agent'    => self::$userAgent,
-            'Accept'        => 'application/json',
             'Content-Type'    => 'application/json'
         ];
 
@@ -256,7 +271,7 @@ class IVRController extends BaseController
 
         //handle errors defined at the API level
         $this->validateResponse($_httpResponse, $_httpRequest);
-        return ApiHelper::mapClass($_httpRequest, $_httpResponse, $response->body, 'IVRList');
+        return $response->body;
     }
 
     /**
@@ -267,7 +282,7 @@ class IVRController extends BaseController
     public function iVRLang(): Models\IVRLang
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ivr/lang';
+        $_queryUrl = $this->config->getBaseUri() . '/ivr/lang';
 
         //prepare headers
         $_headers = [

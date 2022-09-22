@@ -16,6 +16,4 @@ namespace VoiceAPILib;
 class Server
 {
     public const SERVER_1 = 'Server 1';
-
-    public const SERVER_2 = 'Server 2';
 }

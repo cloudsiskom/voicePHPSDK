@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class MaskingController extends BaseController
 {
@@ -38,7 +37,7 @@ class MaskingController extends BaseController
     public function request(Models\Requestrequest $body): Models\Request
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/masking/request';
+        $_queryUrl = $this->config->getBaseUri() . '/masking/request';
 
         //prepare headers
         $_headers = [
@@ -91,7 +90,7 @@ class MaskingController extends BaseController
     public function delete(Models\Deleterequest $body): Models\Delete
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/masking/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/masking/delete';
 
         //prepare headers
         $_headers = [
@@ -142,7 +141,7 @@ class MaskingController extends BaseController
     public function mList(): Models\MList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/masking/list';
+        $_queryUrl = $this->config->getBaseUri() . '/masking/list';
 
         //prepare headers
         $_headers = [

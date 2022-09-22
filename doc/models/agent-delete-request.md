@@ -15,7 +15,7 @@
 
 ```json
 {
-  "agent_code": "10002"
+  "agent_code": "[AGENT_CODE]"
 }
 ```
 

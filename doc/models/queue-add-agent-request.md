@@ -17,9 +17,9 @@
 
 ```json
 {
-  "queue_name": "",
-  "agents": "",
-  "agent_type": ""
+  "queue_name": "[QUEUE_NAME]",
+  "agents": "[AGENT]",
+  "agent_type": "[AGENT_TYPE]"
 }
 ```
 

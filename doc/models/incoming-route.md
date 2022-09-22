@@ -24,7 +24,7 @@
 {
   "id": 57,
   "transaction_id": null,
-  "customer_code": "YASS",
+  "customer_code": "GOJEK",
   "did": "6285757920462",
   "destination": "DTMFTEST",
   "destination_detail": null,

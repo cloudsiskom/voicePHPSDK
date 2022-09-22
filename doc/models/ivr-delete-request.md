@@ -15,7 +15,7 @@
 
 ```json
 {
-  "ivr_name": "788e0df1d21ecc13e5dd1601ba6ae42b"
+  "ivr_name": "[IVR_NAME]"
 }
 ```
 

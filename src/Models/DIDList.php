@@ -20,13 +20,13 @@ class DIDList implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data12[]
+     * @var Data10[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data12[] $data
+     * @param Data10[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class DIDList implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data12[]
+     * @return Data10[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class DIDList implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data12[] $data
+     * @param Data10[] $data
      */
     public function setData(array $data): void
     {

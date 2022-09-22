@@ -36,18 +36,21 @@ class AgentControllerTest extends TestCase
 
 
     /**
-     * Todo Add description for test testAgentNew
+     * ACTION :
+
+\*   new (New agent)
+\*   edit (Edit existing Agent)
      */
     public function testAgentNew()
     {
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "action": "new",
-  "agent_code": "10002",
-  "agent_name": "queue-152",
-  "agent_' .
-            'password": "4321"
+  "action": "[ACTION]",
+  "agent_code": "[AGENT_CODE]",
+  "agent_name": "[AGENT_NAM' .
+            'E]",
+  "agent_password": "[AGENT_PASSWORD]"
 }'),
             'VoiceAPILib\Models\\AgentNewRequest'
         );
@@ -114,7 +117,7 @@ class AgentControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "agent_code": "10002"
+  "agent_code": "[AGENT_CODE]"
 }'),
             'VoiceAPILib\Models\\AgentDeleteRequest'
         );
@@ -216,19 +219,19 @@ class AgentControllerTest extends TestCase
     {
       "id": 34,
       "customer_code": ' .
-                '"YASS",
+                '"GOJEK",
       "agent_code": 9610002,
       "agent_name": "queue-152",
-      "requ' .
-                'ire_password": 1,
+      "req' .
+                'uire_password": 1,
       "agent_password": 4321,
       "lastlogin": 0,
-      "isAc' .
-                'tive": 1,
+      "isA' .
+                'ctive": 1,
       "isLogin": 0,
       "login_channel": null,
-      "login_extension' .
-                '": null,
+      "login_extensio' .
+                'n": null,
       "login_uniqueid": null
     }
   ]

@@ -348,8 +348,7 @@ class VoiceAPIClient implements ConfigurationInterface
      */
     private const ENVIRONMENT_MAP = [
         Environment::PRODUCTION => [
-            Server::SERVER_1 => 'https://api.sintesa-prima.com/v2',
-            Server::SERVER_2 => 'https://voiceapi.mdnit.com/v2/did',
+            Server::SERVER_1 => 'http://example.com/v2',
         ],
     ];
 }

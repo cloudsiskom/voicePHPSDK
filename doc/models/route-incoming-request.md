@@ -17,9 +17,9 @@
 
 ```json
 {
-  "did": "6285757920463",
-  "destination": "TRUNK",
-  "destination_detail": "CVAI"
+  "did": "[DID]",
+  "destination": "[DESTINATION]",
+  "destination_detail": "[DESTINATION_DETAIL]"
 }
 ```
 

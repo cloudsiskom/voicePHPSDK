@@ -43,8 +43,8 @@ class ConversationAIControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "ai_name": "BANK_BKKN",
-  "training_phrases": "WELCOME"
+  "ai_name": "[AI_NAME]",
+  "training_phrases": "[TRAINING_PHRASE]"
 }'),
             'VoiceAPILib\Models\\IntentQueryRequest'
         );
@@ -216,12 +216,12 @@ class ConversationAIControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "ai_name": "BANK_BKKN",
-  "display_name": "kamu siapa yang buat",
-  "training_phr' .
-            'ases": "hi kamu siapa yang buat;siapa yang buat;programmermu siapa;apa yang kamu lakukan' .
-            '",
-  "message_texts": "Aku lahir dari batu !;mau tauuu aja"
+  "ai_name": "[AI_NAME]",
+  "display_name": "[DISPLAY_NAME]",
+  "training_phrases":' .
+            ' "[TRAINING_PHRASE,SPARATED BY ;]",
+  "message_texts": "[RESPONSE_TEXT SPARATED BY ;]"' .
+            '
 }'),
             'VoiceAPILib\Models\\IntentEditRequest'
         );
@@ -343,8 +343,8 @@ class ConversationAIControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "ai_name": "BANK_BKKN",
-  "display_name": "kamu siapa yang buat"
+  "ai_name": "[AI_NAME]",
+  "display_name": "[DISPLAY_NAME]"
 }'),
             'VoiceAPILib\Models\\IntentDeleteRequest'
         );

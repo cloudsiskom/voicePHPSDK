@@ -16,8 +16,8 @@
 
 ```json
 {
-  "ai_name": "BANK_BKKN",
-  "training_phrases": "WELCOME"
+  "ai_name": "[AI_NAME]",
+  "training_phrases": "[TRAINING_PHRASE]"
 }
 ```
 

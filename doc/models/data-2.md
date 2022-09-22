@@ -1,9 +1,9 @@
 
-# Agent New Request
+# Data 2
 
 ## Structure
 
-`AgentNewRequest`
+`Data2`
 
 ## Fields
 
@@ -18,10 +18,10 @@
 
 ```json
 {
-  "action": "[ACTION]",
-  "agent_code": "[AGENT_CODE]",
-  "agent_name": "[AGENT_NAME]",
-  "agent_password": "[AGENT_PASSWORD]"
+  "action": "new",
+  "agent_code": "10002",
+  "agent_name": "queue-152",
+  "agent_password": "4321"
 }
 ```
 

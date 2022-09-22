@@ -19,11 +19,11 @@
 
 ```json
 {
-  "route_name": "test",
-  "device": "8210000000001",
-  "route_to": "RANDOM",
-  "route_detail": "RDM1",
-  "route_prefix": "198767"
+  "route_name": "[ROUTE_NAME]",
+  "device": "[DEVICE]",
+  "route_to": "[ROUTE_DESTINATION]",
+  "route_detail": "[DESTINATION_DETAIL]",
+  "route_prefix": "[PREFIX]"
 }
 ```
 

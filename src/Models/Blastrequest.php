@@ -35,7 +35,7 @@ class Blastrequest implements \JsonSerializable
     private $gender;
 
     /**
-     * @var string
+     * @var int
      */
     private $repeat;
 
@@ -54,7 +54,7 @@ class Blastrequest implements \JsonSerializable
      * @param string $textToSpeech
      * @param string $language
      * @param string $gender
-     * @param string $repeat
+     * @param int $repeat
      * @param string $externalId
      * @param string $callbackUrl
      */
@@ -63,7 +63,7 @@ class Blastrequest implements \JsonSerializable
         string $textToSpeech,
         string $language,
         string $gender,
-        string $repeat,
+        int $repeat,
         string $externalId,
         string $callbackUrl
     ) {
@@ -155,7 +155,7 @@ class Blastrequest implements \JsonSerializable
     /**
      * Returns Repeat.
      */
-    public function getRepeat(): string
+    public function getRepeat(): int
     {
         return $this->repeat;
     }
@@ -166,7 +166,7 @@ class Blastrequest implements \JsonSerializable
      * @required
      * @maps repeat
      */
-    public function setRepeat(string $repeat): void
+    public function setRepeat(int $repeat): void
     {
         $this->repeat = $repeat;
     }

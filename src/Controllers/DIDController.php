@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class DIDController extends BaseController
 {
@@ -36,7 +35,7 @@ class DIDController extends BaseController
     public function dIDList(): Models\DIDList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_2) . '/list';
+        $_queryUrl = $this->config->getBaseUri() . '/did/list';
 
         //prepare headers
         $_headers = [
@@ -86,7 +85,7 @@ class DIDController extends BaseController
     public function dIDBuy(Models\DIDBuyRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/did/buy';
+        $_queryUrl = $this->config->getBaseUri() . '/did/buy';
 
         //prepare headers
         $_headers = [
@@ -145,7 +144,7 @@ class DIDController extends BaseController
     public function dIDListAll(): Models\DIDListAll
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/did/getall';
+        $_queryUrl = $this->config->getBaseUri() . '/did/getall';
 
         //prepare headers
         $_headers = [

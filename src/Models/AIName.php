@@ -20,13 +20,13 @@ class AIName implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data11[]
+     * @var Data9[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data11[] $data
+     * @param Data9[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class AIName implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data11[]
+     * @return Data9[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class AIName implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data11[] $data
+     * @param Data9[] $data
      */
     public function setData(array $data): void
     {

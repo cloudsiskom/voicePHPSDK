@@ -17,9 +17,9 @@
 
 ```json
 {
-  "queue_name": "96YSK-1",
-  "agents": "961000001",
-  "agent_type": "Local"
+  "queue_name": "[QUEUE_NAME]",
+  "agents": "[agent]",
+  "agent_type": "[AGENT_TYPE]"
 }
 ```
 

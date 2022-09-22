@@ -15,7 +15,7 @@
 
 ```json
 {
-  "transaction_id": "64c7a1e218b004054e49d304814cd1b0"
+  "transaction_id": "[TRANSACTION_ID]"
 }
 ```
 

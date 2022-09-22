@@ -10,7 +10,7 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `response` | `bool` | Required | - | getResponse(): bool | setResponse(bool response): void |
-| `data` | [`Data5[]`](../../doc/models/data-5.md) | Required | - | getData(): array | setData(array data): void |
+| `data` | [`Data4[]`](../../doc/models/data-4.md) | Required | - | getData(): array | setData(array data): void |
 
 ## Example (as JSON)
 
@@ -20,7 +20,7 @@
   "data": [
     {
       "id": 34,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "agent_code": 9610002,
       "agent_name": "queue-152",
       "require_password": 1,

@@ -20,15 +20,15 @@ class QueueNew implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data6
+     * @var Data5
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data6 $data
+     * @param Data5 $data
      */
-    public function __construct(bool $response, Data6 $data)
+    public function __construct(bool $response, Data5 $data)
     {
         $this->response = $response;
         $this->data = $data;
@@ -56,7 +56,7 @@ class QueueNew implements \JsonSerializable
     /**
      * Returns Data.
      */
-    public function getData(): Data6
+    public function getData(): Data5
     {
         return $this->data;
     }
@@ -67,7 +67,7 @@ class QueueNew implements \JsonSerializable
      * @required
      * @maps data
      */
-    public function setData(Data6 $data): void
+    public function setData(Data5 $data): void
     {
         $this->data = $data;
     }

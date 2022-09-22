@@ -9,25 +9,19 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `queueId` | `int` | Required | - | getQueueId(): int | setQueueId(int queueId): void |
-| `queueName` | `string` | Required | - | getQueueName(): string | setQueueName(string queueName): void |
-| `musiclass` | `string` | Required | - | getMusiclass(): string | setMusiclass(string musiclass): void |
-| `strategy` | `string` | Required | - | getStrategy(): string | setStrategy(string strategy): void |
-| `members` | `` | Required | - | getMembers(): array | setMembers(array members): void |
+| `code` | `string` | Required | - | getCode(): string | setCode(string code): void |
+| `name` | `string` | Required | - | getName(): string | setName(string name): void |
+| `language` | `string` | Required | - | getLanguage(): string | setLanguage(string language): void |
+| `gender` | `string` | Required | - | getGender(): string | setGender(string gender): void |
 
 ## Example (as JSON)
 
 ```json
 {
-  "queue_id": 35,
-  "queue_name": "96789665",
-  "musiclass": "default",
-  "strategy": "ringall",
-  "members": [
-    {
-      "member": "SIP/968976567"
-    }
-  ]
+  "code": "fil-PH",
+  "name": "fil-PH-Wavenet-B",
+  "language": "Filipino (Philippines)",
+  "gender": "FEMALE"
 }
 ```
 

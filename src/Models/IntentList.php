@@ -20,13 +20,13 @@ class IntentList implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data10[]
+     * @var Data8[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data10[] $data
+     * @param Data8[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class IntentList implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data10[]
+     * @return Data8[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class IntentList implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data10[] $data
+     * @param Data8[] $data
      */
     public function setData(array $data): void
     {

@@ -74,360 +74,388 @@ class IVRControllerTest extends TestCase
         // Test whether the captured response is as we expected
         $this->assertNotNull($result, "Result does not exist");
 
-        $this->assertTrue(
-            TestHelper::isJsonObjectProperSubsetOf(
-                '{
-  "response": true,
-  "data": [
-    {
-      "id": 36,
-      "customer_code": ' .
-                '"YASS",
-      "ivr_name": "TOKO_BUAH",
-      "ivr_title": "MAIN_IVR",
-      "ivr_' .
-                'parent": 0,
-      "ivr_text": "Selamat datang di toko buah, disini anda akan mendap' .
-                'atkan buah terbaik, untuk pembelian buah, tekan 1, untuk pembelian bibit buah, tekan' .
-                ' 2, untuk pembelian pupuk buah, tekan 3, tekan 4 untuk menghubungi layanan pelanggan' .
-                ', tekan 5 untuk apa, tekan angka 9 untuk mengakhiri",
-      "language": "id-ID",
- ' .
-                '     "gender": "MALE",
-      "key_pressed": 0,
-      "exit_key": "9",
-      "back' .
-                '_menu": 8,
-      "main_menu": "0",
-      "action": "MAIN",
-      "action_detail":' .
-                ' "",
-      "trying": 3,
-      "isActive": 1,
-      "children": [
+        $this->assertEquals(
+            '{
+    "response": true,
+    "data": [
         {
-    ' .
-                '      "id": 37,
-          "customer_code": "YASS",
-          "ivr_name": "TOKO_BUA' .
-                'H",
-          "ivr_title": "BUAH",
-          "ivr_parent": 36,
-          "ivr_tex' .
-                't": "Untuk membeli buah mangga tekan1, untuk membeli buah jeruk tekan 2, untuk membe' .
-                'li buah salak tekan 3, untuk mengakhiri tekan angka 9",
-          "language": "id-I' .
-                'D",
-          "gender": "MALE",
-          "key_pressed": 1,
-          "exit_key":' .
-                ' "9",
-          "back_menu": 8,
-          "main_menu": "0",
-          "action": "' .
-                'NONE",
-          "action_detail": "",
-          "trying": 3,
-          "isActive"' .
-                ': 1,
-          "children": [
-            {
-              "id": 42,
-             ' .
-                ' "customer_code": "YASS",
-              "ivr_name": "TOKO_BUAH",
-              "iv' .
-                'r_title": "BUAH JERUK",
-              "ivr_parent": 37,
-              "ivr_text": ' .
-                '"Untuk jeruk bali tekan 1, jeruk yang lain tekan 2, tekan 3 untuk mengakhiri",
-    ' .
-                '          "language": "id-ID",
-              "gender": "MALE",
-              "key_' .
-                'pressed": 1,
-              "exit_key": "9",
-              "back_menu": 8,
-       ' .
-                '       "main_menu": "0",
-              "action": "none",
-              "action_det' .
-                'ail": "",
-              "trying": 3,
-              "isActive": 1
-            },
-' .
-                '            {
-              "id": 69,
-              "customer_code": "YASS",
-    ' .
-                '          "ivr_name": "TOKO_BUAH",
-              "ivr_title": "Mangga",
-          ' .
-                '    "ivr_parent": 37,
-              "ivr_text": "Mangga sedang habis",
-           ' .
-                '   "language": "id-ID",
-              "gender": "MALE",
-              "key_pressed' .
-                '": 2,
-              "exit_key": "9",
-              "back_menu": 8,
-              ' .
-                '"main_menu": "0",
-              "action": "none",
-              "action_detail": n' .
-                'ull,
-              "trying": 3,
-              "isActive": 1
-            }
-      ' .
-                '    ]
-        },
-        {
-          "id": 38,
-          "customer_code": "YASS"' .
-                ',
-          "ivr_name": "TOKO_BUAH",
-          "ivr_title": "BIBIT",
-          "i' .
-                'vr_parent": 36,
-          "ivr_text": "Untuk bibit lokal tekan 1, untuk bibit impor' .
-                't tekan 2, untuk mengakhiri tekan 9",
-          "language": "id-ID",
-          "ge' .
-                'nder": "MALE",
-          "key_pressed": 2,
-          "exit_key": "9",
-          "' .
-                'back_menu": 8,
-          "main_menu": "0",
-          "action": "MON",
-          "' .
-                'action_detail": "",
-          "trying": 3,
-          "isActive": 1,
-          "ch' .
-                'ildren": [
-            {
-              "id": 43,
-              "customer_code": "' .
-                'YASS",
-              "ivr_name": "TOKO_BUAH",
-              "ivr_title": "BIBIT_LO' .
-                'CA",
-              "ivr_parent": 38,
-              "ivr_text": "Bibit buah lokal j' .
-                'umbo tekan 1, Bibit buah lokal biasa tekan 2",
-              "language": "id-ID",
-' .
-                '              "gender": "FEMALE",
-              "key_pressed": 1,
-              "e' .
-                'xit_key": "9",
-              "back_menu": 8,
-              "main_menu": "0",
-    ' .
-                '          "action": "MON",
-              "action_detail": "",
-              "tryin' .
-                'g": 3,
-              "isActive": 1,
-              "children": [
-                {' .
-                '
-                  "id": 44,
-                  "customer_code": "YASS",
-         ' .
-                '         "ivr_name": "TOKO_BUAH",
-                  "ivr_title": "BIBIT_JUMB",
-   ' .
-                '               "ivr_parent": 43,
-                  "ivr_text": "Untuk bibit buah ju' .
-                'mbo super tekan 1, bibit jumbo biasa tekan 2",
-                  "language": "id-ID' .
-                '",
-                  "gender": "MALE",
-                  "key_pressed": 1,
-      ' .
-                '            "exit_key": "9",
-                  "back_menu": 8,
-                  "' .
-                'main_menu": "0",
-                  "action": "GONE",
-                  "action_det' .
-                'ail": "",
-                  "trying": 3,
-                  "isActive": 1
-        ' .
-                '        },
-                {
-                  "id": 45,
-                  "custo' .
-                'mer_code": "YASS",
-                  "ivr_name": "TOKO_BUAH",
-                  "i' .
-                'vr_title": "LOCAL_BIAS",
-                  "ivr_parent": 43,
-                  "iv' .
-                'r_text": "Bibit buah local biasa hanya bisa di tanam dimusin hujan, saat ini tidak m' .
-                'usim hujan, terima kasih",
-                  "language": "id-ID",
-                ' .
-                '  "gender": "MALE",
-                  "key_pressed": 2,
-                  "exit_ke' .
-                'y": "9",
-                  "back_menu": 8,
-                  "main_menu": "0",
-  ' .
-                '                "action": "NON",
-                  "action_detail": "",
-          ' .
-                '        "trying": 3,
-                  "isActive": 1
-                }
-          ' .
-                '    ]
-            }
-          ]
-        },
-        {
-          "id": 39,
-     ' .
-                '     "customer_code": "YASS",
-          "ivr_name": "TOKO_BUAH",
-          "ivr_ti' .
-                'tle": "PUPUK",
-          "ivr_parent": 36,
-          "ivr_text": "Untuk pembelian ' .
-                'pupk organik tekan 1, pupuk kandang tekan 2, menghubungi layanan pelanggan tekan 3",' .
-                '
-          "language": "id-ID",
-          "gender": "MALE",
-          "key_presse' .
-                'd": 3,
-          "exit_key": "9",
-          "back_menu": 8,
-          "main_menu"' .
-                ': "0",
-          "action": "NON",
-          "action_detail": "",
-          "tryin' .
-                'g": 3,
-          "isActive": 1,
-          "children": [
-            {
-          ' .
-                '    "id": 40,
-              "customer_code": "YASS",
-              "ivr_name": "TO' .
-                'KO_BUAH",
-              "ivr_title": "PPK_KANDAN",
-              "ivr_parent": 39,' .
-                '
-              "ivr_text": "Pupuk kandang sedang habis",
-              "language":' .
-                ' "id-ID",
-              "gender": "MALE",
-              "key_pressed": 1,
-       ' .
-                '       "exit_key": "9",
-              "back_menu": 8,
-              "main_menu": "' .
-                '0",
-              "action": "NO",
-              "action_detail": "",
+            "id": 36,
+            "c' .
+                'ustomer_code": "GOJEK",
+            "ivr_name": "TOKO_BUAH",
+            "ivr_title"' .
+                ': "MAIN_IVR",
+            "ivr_parent": 0,
+            "ivr_text": "Selamat datang d' .
+                'i toko buah, disini anda akan mendapatkan buah terbaik, untuk pembelian buah, tekan ' .
+                '1, untuk pembelian bibit buah, tekan 2, untuk pembelian pupuk buah, tekan 3, tekan 4' .
+                ' untuk menghubungi layanan pelanggan, tekan 5 untuk apa, tekan angka 9 untuk mengakh' .
+                'iri",
+            "language": "id-ID",
+            "gender": "MALE",
+            "ke' .
+                'y_pressed": 0,
+            "exit_key": "9",
+            "back_menu": 8,
             ' .
-                '  "trying": 3,
-              "isActive": 1
-            },
-            {
-        ' .
-                '      "id": 41,
-              "customer_code": "YASS",
-              "ivr_name": "' .
-                'TOKO_BUAH",
-              "ivr_title": "PPK_ORG",
-              "ivr_parent": 39,' .
-                '
-              "ivr_text": "Pupuk organik yang ada tinggal 1",
-              "langu' .
-                'age": "id-ID",
-              "gender": "FEMALE",
-              "key_pressed": 2,
-' .
-                '              "exit_key": "9",
-              "back_menu": 8,
-              "main_m' .
-                'enu": "0",
-              "action": "NO",
-              "action_detail": "",
-     ' .
-                '         "trying": 3,
-              "isActive": 1
-            }
-          ]
-    ' .
-                '    },
-        {
-          "id": 46,
-          "customer_code": "YASS",
-        ' .
-                '  "ivr_name": "TOKO_BUAH",
-          "ivr_title": "CS",
-          "ivr_parent": 36' .
-                ',
-          "ivr_text": "Anda akan dihubungkan dengan layanan pelanggan",
-        ' .
-                '  "language": "id-ID",
-          "gender": "MALE",
-          "key_pressed": 4,
-  ' .
-                '        "exit_key": "9",
-          "back_menu": 8,
-          "main_menu": "0",
-  ' .
-                '        "action": "CS",
-          "action_detail": "",
-          "trying": 3,
+                '"main_menu": "0",
+            "action": "MAIN",
+            "action_detail": "",
    ' .
-                '       "isActive": 1
-        },
-        {
-          "id": 75,
-          "custome' .
-                'r_code": "YASS",
-          "ivr_name": "TOKO_BUAH",
-          "ivr_title": "apa ma' .
-                'u",
-          "ivr_parent": 36,
-          "ivr_text": "mau apa?",
-          "lang' .
-                'uage": "id-ID",
-          "gender": "MALE",
-          "key_pressed": 5,
+                '         "trying": 3,
+            "isActive": 1,
+            "children": [
          ' .
-                ' "exit_key": "9",
-          "back_menu": 8,
-          "main_menu": "0",
-         ' .
-                ' "action": "none",
-          "action_detail": null,
-          "trying": 3,
+                '       {
+                    "id": 37,
+                    "customer_code": "GOJEK",' .
+                '
+                    "ivr_name": "TOKO_BUAH",
+                    "ivr_title": "BUAH' .
+                '",
+                    "ivr_parent": 36,
+                    "ivr_text": "Untuk memb' .
+                'eli buah mangga tekan1, untuk membeli buah jeruk tekan 2, untuk membeli buah salak t' .
+                'ekan 3, untuk mengakhiri tekan angka 9",
+                    "language": "id-ID",
+  ' .
+                '                  "gender": "MALE",
+                    "key_pressed": 1,
+          ' .
+                '          "exit_key": "9",
+                    "back_menu": 8,
+                    "' .
+                'main_menu": "0",
+                    "action": "NONE",
+                    "action_d' .
+                'etail": "",
+                    "trying": 3,
+                    "isActive": 1,
+    ' .
+                '                "children": [
+                        {
+                            ' .
+                '"id": 42,
+                            "customer_code": "GOJEK",
+                    ' .
+                '        "ivr_name": "TOKO_BUAH",
+                            "ivr_title": "BUAH JERU' .
+                'K",
+                            "ivr_parent": 37,
+                            "ivr_t' .
+                'ext": "Untuk jeruk bali tekan 1, jeruk yang lain tekan 2, tekan 3 untuk mengakhiri",' .
+                '
+                            "language": "id-ID",
+                            "gende' .
+                'r": "MALE",
+                            "key_pressed": 1,
+                          ' .
+                '  "exit_key": "9",
+                            "back_menu": 8,
+                     ' .
+                '       "main_menu": "0",
+                            "action": "none",
+             ' .
+                '               "action_detail": "",
+                            "trying": 3,
+       ' .
+                '                     "isActive": 1
+                        },
+                      ' .
+                '  {
+                            "id": 69,
+                            "customer_code' .
+                '": "GOJEK",
+                            "ivr_name": "TOKO_BUAH",
+                   ' .
+                '         "ivr_title": "Mangga",
+                            "ivr_parent": 37,
       ' .
-                '    "isActive": 1
-        }
-      ]
-    }
-  ]
-}',
-                self::$httpResponse->getResponse()->getRawBody(),
-                false,
-                true,
-                false
-            ),
-            "Response body does not match in keys"
+                '                      "ivr_text": "Mangga sedang habis",
+                           ' .
+                ' "language": "id-ID",
+                            "gender": "MALE",
+                ' .
+                '            "key_pressed": 2,
+                            "exit_key": "9",
+         ' .
+                '                   "back_menu": 8,
+                            "main_menu": "0",
+   ' .
+                '                         "action": "none",
+                            "action_detai' .
+                'l": null,
+                            "trying": 3,
+                            "isAc' .
+                'tive": 1
+                        }
+                    ]
+                },
+        ' .
+                '        {
+                    "id": 38,
+                    "customer_code": "GOJEK"' .
+                ',
+                    "ivr_name": "TOKO_BUAH",
+                    "ivr_title": "BIB' .
+                'IT",
+                    "ivr_parent": 36,
+                    "ivr_text": "Untuk bi' .
+                'bit lokal tekan 1, untuk bibit import tekan 2, untuk mengakhiri tekan 9",
+          ' .
+                '          "language": "id-ID",
+                    "gender": "MALE",
+               ' .
+                '     "key_pressed": 2,
+                    "exit_key": "9",
+                    "bac' .
+                'k_menu": 8,
+                    "main_menu": "0",
+                    "action": "MON' .
+                '",
+                    "action_detail": "",
+                    "trying": 3,
+       ' .
+                '             "isActive": 1,
+                    "children": [
+                      ' .
+                '  {
+                            "id": 43,
+                            "customer_code' .
+                '": "GOJEK",
+                            "ivr_name": "TOKO_BUAH",
+                   ' .
+                '         "ivr_title": "BIBIT_LOCA",
+                            "ivr_parent": 38,
+  ' .
+                '                          "ivr_text": "Bibit buah lokal jumbo tekan 1, Bibit buah lo' .
+                'kal biasa tekan 2",
+                            "language": "id-ID",
+               ' .
+                '             "gender": "FEMALE",
+                            "key_pressed": 1,
+     ' .
+                '                       "exit_key": "9",
+                            "back_menu": 8,
+' .
+                '                            "main_menu": "0",
+                            "action": ' .
+                '"MON",
+                            "action_detail": "",
+                            ' .
+                '"trying": 3,
+                            "isActive": 1,
+                            ' .
+                '"children": [
+                                {
+                                    ' .
+                '"id": 44,
+                                    "customer_code": "GOJEK",
+            ' .
+                '                        "ivr_name": "TOKO_BUAH",
+                                   ' .
+                ' "ivr_title": "BIBIT_JUMB",
+                                    "ivr_parent": 43,
+  ' .
+                '                                  "ivr_text": "Untuk bibit buah jumbo super tekan 1,' .
+                ' bibit jumbo biasa tekan 2",
+                                    "language": "id-ID"' .
+                ',
+                                    "gender": "MALE",
+                            ' .
+                '        "key_pressed": 1,
+                                    "exit_key": "9",
+     ' .
+                '                               "back_menu": 8,
+                                    "' .
+                'main_menu": "0",
+                                    "action": "GONE",
+             ' .
+                '                       "action_detail": "",
+                                    "try' .
+                'ing": 3,
+                                    "isActive": 1
+                         ' .
+                '       },
+                                {
+                                    "id"' .
+                ': 45,
+                                    "customer_code": "GOJEK",
+                ' .
+                '                    "ivr_name": "TOKO_BUAH",
+                                    "iv' .
+                'r_title": "LOCAL_BIAS",
+                                    "ivr_parent": 43,
+      ' .
+                '                              "ivr_text": "Bibit buah local biasa hanya bisa di tana' .
+                'm dimusin hujan, saat ini tidak musim hujan, terima kasih",
+                        ' .
+                '            "language": "id-ID",
+                                    "gender": "MALE' .
+                '",
+                                    "key_pressed": 2,
+                           ' .
+                '         "exit_key": "9",
+                                    "back_menu": 8,
+      ' .
+                '                              "main_menu": "0",
+                                    ' .
+                '"action": "NON",
+                                    "action_detail": "",
+          ' .
+                '                          "trying": 3,
+                                    "isActive' .
+                '": 1
+                                }
+                            ]
+               ' .
+                '         }
+                    ]
+                },
+                {
+              ' .
+                '      "id": 39,
+                    "customer_code": "GOJEK",
+                    "i' .
+                'vr_name": "TOKO_BUAH",
+                    "ivr_title": "PUPUK",
+                   ' .
+                ' "ivr_parent": 36,
+                    "ivr_text": "Untuk pembelian pupk organik tek' .
+                'an 1, pupuk kandang tekan 2, menghubungi layanan pelanggan tekan 3",
+               ' .
+                '     "language": "id-ID",
+                    "gender": "MALE",
+                    ' .
+                '"key_pressed": 3,
+                    "exit_key": "9",
+                    "back_men' .
+                'u": 8,
+                    "main_menu": "0",
+                    "action": "NON",
+  ' .
+                '                  "action_detail": "",
+                    "trying": 3,
+            ' .
+                '        "isActive": 1,
+                    "children": [
+                        {
+ ' .
+                '                           "id": 40,
+                            "customer_code": "G' .
+                'OJEK",
+                            "ivr_name": "TOKO_BUAH",
+                        ' .
+                '    "ivr_title": "PPK_KANDAN",
+                            "ivr_parent": 39,
+       ' .
+                '                     "ivr_text": "Pupuk kandang sedang habis",
+                     ' .
+                '       "language": "id-ID",
+                            "gender": "MALE",
+          ' .
+                '                  "key_pressed": 1,
+                            "exit_key": "9",
+   ' .
+                '                         "back_menu": 8,
+                            "main_menu": "0' .
+                '",
+                            "action": "NO",
+                            "action_d' .
+                'etail": "",
+                            "trying": 3,
+                            "is' .
+                'Active": 1
+                        },
+                        {
+                    ' .
+                '        "id": 41,
+                            "customer_code": "GOJEK",
+            ' .
+                '                "ivr_name": "TOKO_BUAH",
+                            "ivr_title": "P' .
+                'PK_ORG",
+                            "ivr_parent": 39,
+                            "' .
+                'ivr_text": "Pupuk organik yang ada tinggal 1",
+                            "language' .
+                '": "id-ID",
+                            "gender": "FEMALE",
+                        ' .
+                '    "key_pressed": 2,
+                            "exit_key": "9",
+                 ' .
+                '           "back_menu": 8,
+                            "main_menu": "0",
+           ' .
+                '                 "action": "NO",
+                            "action_detail": "",
+  ' .
+                '                          "trying": 3,
+                            "isActive": 1
+   ' .
+                '                     }
+                    ]
+                },
+                {
+  ' .
+                '                  "id": 46,
+                    "customer_code": "GOJEK",
+          ' .
+                '          "ivr_name": "TOKO_BUAH",
+                    "ivr_title": "CS",
+          ' .
+                '          "ivr_parent": 36,
+                    "ivr_text": "Anda akan dihubungkan d' .
+                'engan layanan pelanggan",
+                    "language": "id-ID",
+                 ' .
+                '   "gender": "MALE",
+                    "key_pressed": 4,
+                    "exit' .
+                '_key": "9",
+                    "back_menu": 8,
+                    "main_menu": "0"' .
+                ',
+                    "action": "CS",
+                    "action_detail": "",
+     ' .
+                '               "trying": 3,
+                    "isActive": 1
+                },
+   ' .
+                '             {
+                    "id": 75,
+                    "customer_code": "G' .
+                'OJEK",
+                    "ivr_name": "TOKO_BUAH",
+                    "ivr_title":' .
+                ' "apa mau",
+                    "ivr_parent": 36,
+                    "ivr_text": "m' .
+                'au apa?",
+                    "language": "id-ID",
+                    "gender": "MA' .
+                'LE",
+                    "key_pressed": 5,
+                    "exit_key": "9",
+    ' .
+                '                "back_menu": 8,
+                    "main_menu": "0",
+              ' .
+                '      "action": "none",
+                    "action_detail": null,
+                 ' .
+                '   "trying": 3,
+                    "isActive": 1
+                }
+            ]
+  ' .
+                '      }
+    ]
+',
+            self::$httpResponse->getResponse()->getRawBody(),
+            "Response body does not match exactly"
         );
     }
 

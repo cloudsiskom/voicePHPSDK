@@ -15,113 +15,87 @@ use stdClass;
 class Data9 implements \JsonSerializable
 {
     /**
-     * @var string
+     * @var int
      */
-    private $code;
+    private $id;
 
     /**
      * @var string
      */
-    private $name;
+    private $aiName;
 
     /**
      * @var string
      */
-    private $language;
+    private $createDate;
 
     /**
-     * @var string
+     * @param int $id
+     * @param string $aiName
+     * @param string $createDate
      */
-    private $gender;
-
-    /**
-     * @param string $code
-     * @param string $name
-     * @param string $language
-     * @param string $gender
-     */
-    public function __construct(string $code, string $name, string $language, string $gender)
+    public function __construct(int $id, string $aiName, string $createDate)
     {
-        $this->code = $code;
-        $this->name = $name;
-        $this->language = $language;
-        $this->gender = $gender;
+        $this->id = $id;
+        $this->aiName = $aiName;
+        $this->createDate = $createDate;
     }
 
     /**
-     * Returns Code.
+     * Returns Id.
      */
-    public function getCode(): string
+    public function getId(): int
     {
-        return $this->code;
+        return $this->id;
     }
 
     /**
-     * Sets Code.
+     * Sets Id.
      *
      * @required
-     * @maps code
+     * @maps id
      */
-    public function setCode(string $code): void
+    public function setId(int $id): void
     {
-        $this->code = $code;
+        $this->id = $id;
     }
 
     /**
-     * Returns Name.
+     * Returns Ai Name.
      */
-    public function getName(): string
+    public function getAiName(): string
     {
-        return $this->name;
+        return $this->aiName;
     }
 
     /**
-     * Sets Name.
+     * Sets Ai Name.
      *
      * @required
-     * @maps name
+     * @maps ai_name
      */
-    public function setName(string $name): void
+    public function setAiName(string $aiName): void
     {
-        $this->name = $name;
+        $this->aiName = $aiName;
     }
 
     /**
-     * Returns Language.
+     * Returns Create Date.
      */
-    public function getLanguage(): string
+    public function getCreateDate(): string
     {
-        return $this->language;
+        return $this->createDate;
     }
 
     /**
-     * Sets Language.
+     * Sets Create Date.
      *
      * @required
-     * @maps language
+     * @maps create_date
      */
-    public function setLanguage(string $language): void
+    public function setCreateDate(string $createDate): void
     {
-        $this->language = $language;
-    }
-
-    /**
-     * Returns Gender.
-     */
-    public function getGender(): string
-    {
-        return $this->gender;
-    }
-
-    /**
-     * Sets Gender.
-     *
-     * @required
-     * @maps gender
-     */
-    public function setGender(string $gender): void
-    {
-        $this->gender = $gender;
+        $this->createDate = $createDate;
     }
 
     /**
@@ -136,10 +110,9 @@ class Data9 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['code']     = $this->code;
-        $json['name']     = $this->name;
-        $json['language'] = $this->language;
-        $json['gender']   = $this->gender;
+        $json['id']          = $this->id;
+        $json['ai_name']     = $this->aiName;
+        $json['create_date'] = $this->createDate;
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

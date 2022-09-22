@@ -15,143 +15,113 @@ use stdClass;
 class Data7 implements \JsonSerializable
 {
     /**
-     * @var int
+     * @var string
      */
-    private $queueId;
+    private $code;
 
     /**
      * @var string
      */
-    private $queueName;
+    private $name;
 
     /**
      * @var string
      */
-    private $musiclass;
+    private $language;
 
     /**
      * @var string
      */
-    private $strategy;
+    private $gender;
 
     /**
-     * @var Member[]
+     * @param string $code
+     * @param string $name
+     * @param string $language
+     * @param string $gender
      */
-    private $members;
-
-    /**
-     * @param int $queueId
-     * @param string $queueName
-     * @param string $musiclass
-     * @param string $strategy
-     * @param Member[] $members
-     */
-    public function __construct(int $queueId, string $queueName, string $musiclass, string $strategy, array $members)
+    public function __construct(string $code, string $name, string $language, string $gender)
     {
-        $this->queueId = $queueId;
-        $this->queueName = $queueName;
-        $this->musiclass = $musiclass;
-        $this->strategy = $strategy;
-        $this->members = $members;
+        $this->code = $code;
+        $this->name = $name;
+        $this->language = $language;
+        $this->gender = $gender;
     }
 
     /**
-     * Returns Queue Id.
+     * Returns Code.
      */
-    public function getQueueId(): int
+    public function getCode(): string
     {
-        return $this->queueId;
+        return $this->code;
     }
 
     /**
-     * Sets Queue Id.
+     * Sets Code.
      *
      * @required
-     * @maps queue_id
+     * @maps code
      */
-    public function setQueueId(int $queueId): void
+    public function setCode(string $code): void
     {
-        $this->queueId = $queueId;
+        $this->code = $code;
     }
 
     /**
-     * Returns Queue Name.
+     * Returns Name.
      */
-    public function getQueueName(): string
+    public function getName(): string
     {
-        return $this->queueName;
+        return $this->name;
     }
 
     /**
-     * Sets Queue Name.
+     * Sets Name.
      *
      * @required
-     * @maps queue_name
+     * @maps name
      */
-    public function setQueueName(string $queueName): void
+    public function setName(string $name): void
     {
-        $this->queueName = $queueName;
+        $this->name = $name;
     }
 
     /**
-     * Returns Musiclass.
+     * Returns Language.
      */
-    public function getMusiclass(): string
+    public function getLanguage(): string
     {
-        return $this->musiclass;
+        return $this->language;
     }
 
     /**
-     * Sets Musiclass.
+     * Sets Language.
      *
      * @required
-     * @maps musiclass
+     * @maps language
      */
-    public function setMusiclass(string $musiclass): void
+    public function setLanguage(string $language): void
     {
-        $this->musiclass = $musiclass;
+        $this->language = $language;
     }
 
     /**
-     * Returns Strategy.
+     * Returns Gender.
      */
-    public function getStrategy(): string
+    public function getGender(): string
     {
-        return $this->strategy;
+        return $this->gender;
     }
 
     /**
-     * Sets Strategy.
+     * Sets Gender.
      *
      * @required
-     * @maps strategy
+     * @maps gender
      */
-    public function setStrategy(string $strategy): void
+    public function setGender(string $gender): void
     {
-        $this->strategy = $strategy;
-    }
-
-    /**
-     * Returns Members.
-     *
-     * @return Member[]
-     */
-    public function getMembers(): array
-    {
-        return $this->members;
-    }
-
-    /**
-     * Sets Members.
-     *
-     * @required
-     * @maps members
-     *
-     * @param Member[] $members
-     */
-    public function setMembers(array $members): void
-    {
-        $this->members = $members;
+        $this->gender = $gender;
     }
 
     /**
@@ -166,11 +136,10 @@ class Data7 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['queue_id']   = $this->queueId;
-        $json['queue_name'] = $this->queueName;
-        $json['musiclass']  = $this->musiclass;
-        $json['strategy']   = $this->strategy;
-        $json['members']    = $this->members;
+        $json['code']     = $this->code;
+        $json['name']     = $this->name;
+        $json['language'] = $this->language;
+        $json['gender']   = $this->gender;
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

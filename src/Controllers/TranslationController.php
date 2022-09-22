@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class TranslationController extends BaseController
 {
@@ -38,7 +37,7 @@ class TranslationController extends BaseController
     public function translationDelete(Models\TranslationDeleteRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/translation/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/translation/delete';
 
         //prepare headers
         $_headers = [
@@ -99,7 +98,7 @@ class TranslationController extends BaseController
     public function translationSetup(Models\TranslationSetupRequest $body): Models\TranslationSetup
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/translation/setup';
+        $_queryUrl = $this->config->getBaseUri() . '/translation/setup';
 
         //prepare headers
         $_headers = [

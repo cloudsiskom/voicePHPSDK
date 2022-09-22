@@ -20,15 +20,15 @@ class AgentDelete implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data4
+     * @var Data3
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data4 $data
+     * @param Data3 $data
      */
-    public function __construct(bool $response, Data4 $data)
+    public function __construct(bool $response, Data3 $data)
     {
         $this->response = $response;
         $this->data = $data;
@@ -56,7 +56,7 @@ class AgentDelete implements \JsonSerializable
     /**
      * Returns Data.
      */
-    public function getData(): Data4
+    public function getData(): Data3
     {
         return $this->data;
     }
@@ -67,7 +67,7 @@ class AgentDelete implements \JsonSerializable
      * @required
      * @maps data
      */
-    public function setData(Data4 $data): void
+    public function setData(Data3 $data): void
     {
         $this->data = $data;
     }

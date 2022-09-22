@@ -22,7 +22,7 @@
     {
       "id": 57,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285757920462",
       "destination": "DTMFTEST",
       "destination_detail": null,
@@ -32,7 +32,7 @@
     {
       "id": 65,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285592055238",
       "destination": "CVAI",
       "destination_detail": "BANK_BKKN",
@@ -42,7 +42,7 @@
     {
       "id": 69,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "02150995134",
       "destination": "IVR",
       "destination_detail": "TOKO_BUAH",
@@ -52,7 +52,7 @@
     {
       "id": 72,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285757920463",
       "destination": "TRUNK",
       "destination_detail": "CVAI",
@@ -63,7 +63,7 @@
   "outgoing_route": [
     {
       "id": 582,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "extension": "ALL",
       "route_to": "PROVIDER",
       "route_detail": "6285592055236",
@@ -73,7 +73,7 @@
     },
     {
       "id": 583,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "extension": "8210000000001",
       "route_to": "RANDOM",
       "route_detail": "RDM1",

@@ -18,6 +18,11 @@ $agentController = $client->getAgentController();
 
 # Agent New
 
+ACTION :
+
+\*   new (New agent)
+\*   edit (Edit existing Agent)
+
 ```php
 function agentNew(AgentNewRequest $body): AgentNew
 ```
@@ -35,10 +40,10 @@ function agentNew(AgentNewRequest $body): AgentNew
 ## Example Usage
 
 ```php
-$body_action = 'new';
-$body_agentCode = '10002';
-$body_agentName = 'queue-152';
-$body_agentPassword = '4321';
+$body_action = '[ACTION]';
+$body_agentCode = '[AGENT_CODE]';
+$body_agentName = '[AGENT_NAME]';
+$body_agentPassword = '[AGENT_PASSWORD]';
 $body = new Models\AgentNewRequest(
     $body_action,
     $body_agentCode,
@@ -83,7 +88,7 @@ function agentDelete(AgentDeleteRequest $body): AgentDelete
 ## Example Usage
 
 ```php
-$body_agentCode = '10002';
+$body_agentCode = '[AGENT_CODE]';
 $body = new Models\AgentDeleteRequest(
     $body_agentCode
 );
@@ -127,7 +132,7 @@ $result = $agentController->agentList();
   "data": [
     {
       "id": 34,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "agent_code": 9610002,
       "agent_name": "queue-152",
       "require_password": 1,
@@ -146,6 +151,11 @@ $result = $agentController->agentList();
 
 # Agent Login
 
+**ACTION** :
+
+\*   login (Login agent to EXTENSION)
+\*   logoff (logoff agent from EXTENSION)
+
 ```php
 function agentLogin(AgentLoginRequest $body): void
 ```
@@ -163,10 +173,10 @@ function agentLogin(AgentLoginRequest $body): void
 ## Example Usage
 
 ```php
-$body_actionType = 'login';
-$body_agentCode = '10002';
-$body_extension = '8210000000001';
-$body_agentPassword = '4321';
+$body_actionType = '[ACTION]';
+$body_agentCode = '[AGENT_CODE]';
+$body_extension = '[EXTENSION TO LOGIN]';
+$body_agentPassword = '[AGENT_PASSWORD]';
 $body = new Models\AgentLoginRequest(
     $body_actionType,
     $body_agentCode,

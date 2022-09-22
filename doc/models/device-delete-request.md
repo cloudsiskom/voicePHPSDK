@@ -15,7 +15,7 @@
 
 ```json
 {
-  "extension": "96120000001"
+  "extension": "[DEVICE_EXTENSION / NAME]"
 }
 ```
 

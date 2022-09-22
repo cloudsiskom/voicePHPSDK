@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class AgentController extends BaseController
 {
@@ -29,6 +28,11 @@ class AgentController extends BaseController
     }
 
     /**
+     * ACTION :
+     *
+     * \*   new (New agent)
+     * \*   edit (Edit existing Agent)
+     *
      * @param Models\AgentNewRequest $body
      *
      * @return Models\AgentNew Response from the API call
@@ -38,7 +42,7 @@ class AgentController extends BaseController
     public function agentNew(Models\AgentNewRequest $body): Models\AgentNew
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/agent/new';
+        $_queryUrl = $this->config->getBaseUri() . '/agent/new';
 
         //prepare headers
         $_headers = [
@@ -91,7 +95,7 @@ class AgentController extends BaseController
     public function agentDelete(Models\AgentDeleteRequest $body): Models\AgentDelete
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/agent/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/agent/delete';
 
         //prepare headers
         $_headers = [
@@ -142,7 +146,7 @@ class AgentController extends BaseController
     public function agentList(): Models\AgentList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/agent/list';
+        $_queryUrl = $this->config->getBaseUri() . '/agent/list';
 
         //prepare headers
         $_headers = [
@@ -183,6 +187,11 @@ class AgentController extends BaseController
     }
 
     /**
+     * **ACTION** :
+     *
+     * \*   login (Login agent to EXTENSION)
+     * \*   logoff (logoff agent from EXTENSION)
+     *
      * @param Models\AgentLoginRequest $body
      *
      * @return void Response from the API call
@@ -192,7 +201,7 @@ class AgentController extends BaseController
     public function agentLogin(Models\AgentLoginRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/agent/action';
+        $_queryUrl = $this->config->getBaseUri() . '/agent/action';
 
         //prepare headers
         $_headers = [

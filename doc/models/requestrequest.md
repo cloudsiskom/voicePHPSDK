@@ -15,7 +15,7 @@
 
 ```json
 {
-  "caller_id": "628198788686"
+  "caller_id": "[CALLER_ID]"
 }
 ```
 

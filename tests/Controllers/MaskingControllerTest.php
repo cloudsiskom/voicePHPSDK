@@ -43,7 +43,7 @@ class MaskingControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "caller_id": "628198788686"
+  "caller_id": "[CALLER_ID]"
 }'),
             'VoiceAPILib\Models\\Requestrequest'
         );
@@ -105,7 +105,7 @@ class MaskingControllerTest extends TestCase
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "caller_id": "628198788686"
+  "caller_id": "[CALLER_ID]"
 }'),
             'VoiceAPILib\Models\\Deleterequest'
         );

@@ -20,13 +20,13 @@ class AgentList implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data5[]
+     * @var Data4[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data5[] $data
+     * @param Data4[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class AgentList implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data5[]
+     * @return Data4[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class AgentList implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data5[] $data
+     * @param Data4[] $data
      */
     public function setData(array $data): void
     {

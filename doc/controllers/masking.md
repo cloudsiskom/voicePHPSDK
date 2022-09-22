@@ -34,7 +34,7 @@ function request(Requestrequest $body): Request
 ## Example Usage
 
 ```php
-$body_callerId = '628198788686';
+$body_callerId = '[CALLER_ID]';
 $body = new Models\Requestrequest(
     $body_callerId
 );
@@ -72,7 +72,7 @@ function delete(Deleterequest $body): Delete
 ## Example Usage
 
 ```php
-$body_callerId = '628198788686';
+$body_callerId = '[CALLER_ID]';
 $body = new Models\Deleterequest(
     $body_callerId
 );

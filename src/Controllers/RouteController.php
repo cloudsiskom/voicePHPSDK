@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class RouteController extends BaseController
 {
@@ -38,7 +37,7 @@ class RouteController extends BaseController
     public function routeIncoming(Models\RouteIncomingRequest $body): Models\RouteIncoming
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/route/incoming';
+        $_queryUrl = $this->config->getBaseUri() . '/route/incoming';
 
         //prepare headers
         $_headers = [
@@ -91,7 +90,7 @@ class RouteController extends BaseController
     public function routeOutgoing(Models\RouteOutgoingRequest $body): Models\RouteOutgoing
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/route/outgoing';
+        $_queryUrl = $this->config->getBaseUri() . '/route/outgoing';
 
         //prepare headers
         $_headers = [
@@ -142,7 +141,7 @@ class RouteController extends BaseController
     public function routeList(): Models\RouteList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/route/list';
+        $_queryUrl = $this->config->getBaseUri() . '/route/list';
 
         //prepare headers
         $_headers = [

@@ -9,15 +9,25 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
+| `queueId` | `int` | Required | - | getQueueId(): int | setQueueId(int queueId): void |
 | `queueName` | `string` | Required | - | getQueueName(): string | setQueueName(string queueName): void |
-| `ringStrategy` | `string` | Required | - | getRingStrategy(): string | setRingStrategy(string ringStrategy): void |
+| `musiclass` | `string` | Required | - | getMusiclass(): string | setMusiclass(string musiclass): void |
+| `strategy` | `string` | Required | - | getStrategy(): string | setStrategy(string strategy): void |
+| `members` | `` | Required | - | getMembers(): array | setMembers(array members): void |
 
 ## Example (as JSON)
 
 ```json
 {
-  "queue_name": "queue-151-3",
-  "ring_strategy": "ringall"
+  "queue_id": 35,
+  "queue_name": "96789665",
+  "musiclass": "default",
+  "strategy": "ringall",
+  "members": [
+    {
+      "member": "SIP/968976567"
+    }
+  ]
 }
 ```
 

@@ -18,6 +18,11 @@ $deviceController = $client->getDeviceController();
 
 # Device
 
+DEVICE_TYPE :
+
+\*   TRUNK (This will be sip trunk with dedicated IP Address)
+\*   EXTEN (Extension)
+
 ```php
 function device(DeviceRequest $body): Device
 ```
@@ -35,11 +40,11 @@ function device(DeviceRequest $body): Device
 ## Example Usage
 
 ```php
-$body_deviceType = 'TRUNK';
-$body_deviceOwner = 'kiki';
-$body_extension = '1424500000013';
-$body_secret = 'padamunegeri';
-$body_ipAddress = '192.168.1.1';
+$body_deviceType = '[DEVICE_TYPE]';
+$body_deviceOwner = '[DEVICE_OWNER]';
+$body_extension = '[DEVICE_NAME / EXTENSION]';
+$body_secret = '[DEVICE_SECRET]';
+$body_ipAddress = '[DEVICE_IP_ADDRESS]';
 $body = new Models\DeviceRequest(
     $body_deviceType,
     $body_deviceOwner,
@@ -135,9 +140,9 @@ function deviceEdit(DeviceEditRequest $body): void
 ## Example Usage
 
 ```php
-$body_extension = '810000000002';
-$body_deviceOwner = 'yassuki';
-$body_secret = 'sahabatku';
+$body_extension = '[DEVICE_EXTENSION]';
+$body_deviceOwner = '[DEVICE_OWNER]';
+$body_secret = '[DEVICE_SECRET]';
 $body = new Models\DeviceEditRequest(
     $body_extension,
     $body_deviceOwner,
@@ -173,7 +178,7 @@ function deviceDelete(DeviceDeleteRequest $body): void
 ## Example Usage
 
 ```php
-$body_extension = '96120000001';
+$body_extension = '[DEVICE_EXTENSION / NAME]';
 $body = new Models\DeviceDeleteRequest(
     $body_extension
 );

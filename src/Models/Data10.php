@@ -11,61 +11,96 @@ declare(strict_types=1);
 namespace VoiceAPILib\Models;
 
 use stdClass;
+use VoiceAPILib\ApiHelper;
 
 class Data10 implements \JsonSerializable
 {
+    /**
+     * @var string
+     */
+    private $customerCode;
+
     /**
      * @var int
      */
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
-    private $aiName;
+    private $active;
 
     /**
      * @var string
      */
-    private $displayName;
+    private $did;
 
     /**
      * @var string
      */
-    private $trainingPhrases;
+    private $didType;
 
     /**
-     * @var string
+     * @var int
      */
-    private $messageTexts;
+    private $activationCost;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private $createDate;
+    private $incoming;
 
     /**
+     * @var string|null
+     */
+    private $destinationDetail;
+
+    /**
+     * @var int|null|string
+     */
+    private $isActive;
+
+    /**
+     * @param string $customerCode
      * @param int $id
-     * @param string $aiName
-     * @param string $displayName
-     * @param string $trainingPhrases
-     * @param string $messageTexts
-     * @param string $createDate
+     * @param int $active
+     * @param string $did
+     * @param string $didType
+     * @param int $activationCost
      */
     public function __construct(
+        string $customerCode,
         int $id,
-        string $aiName,
-        string $displayName,
-        string $trainingPhrases,
-        string $messageTexts,
-        string $createDate
+        int $active,
+        string $did,
+        string $didType,
+        int $activationCost
     ) {
+        $this->customerCode = $customerCode;
         $this->id = $id;
-        $this->aiName = $aiName;
-        $this->displayName = $displayName;
-        $this->trainingPhrases = $trainingPhrases;
-        $this->messageTexts = $messageTexts;
-        $this->createDate = $createDate;
+        $this->active = $active;
+        $this->did = $did;
+        $this->didType = $didType;
+        $this->activationCost = $activationCost;
+    }
+
+    /**
+     * Returns Customer Code.
+     */
+    public function getCustomerCode(): string
+    {
+        return $this->customerCode;
+    }
+
+    /**
+     * Sets Customer Code.
+     *
+     * @required
+     * @maps customer_code
+     */
+    public function setCustomerCode(string $customerCode): void
+    {
+        $this->customerCode = $customerCode;
     }
 
     /**
@@ -88,98 +123,138 @@ class Data10 implements \JsonSerializable
     }
 
     /**
-     * Returns Ai Name.
+     * Returns Active.
      */
-    public function getAiName(): string
+    public function getActive(): int
     {
-        return $this->aiName;
+        return $this->active;
     }
 
     /**
-     * Sets Ai Name.
+     * Sets Active.
      *
      * @required
-     * @maps ai_name
+     * @maps active
      */
-    public function setAiName(string $aiName): void
+    public function setActive(int $active): void
     {
-        $this->aiName = $aiName;
+        $this->active = $active;
     }
 
     /**
-     * Returns Display Name.
+     * Returns Did.
      */
-    public function getDisplayName(): string
+    public function getDid(): string
     {
-        return $this->displayName;
+        return $this->did;
     }
 
     /**
-     * Sets Display Name.
+     * Sets Did.
      *
      * @required
-     * @maps display_name
+     * @maps did
      */
-    public function setDisplayName(string $displayName): void
+    public function setDid(string $did): void
     {
-        $this->displayName = $displayName;
+        $this->did = $did;
     }
 
     /**
-     * Returns Training Phrases.
+     * Returns Did Type.
      */
-    public function getTrainingPhrases(): string
+    public function getDidType(): string
     {
-        return $this->trainingPhrases;
+        return $this->didType;
     }
 
     /**
-     * Sets Training Phrases.
+     * Sets Did Type.
      *
      * @required
-     * @maps training_phrases
+     * @maps did_type
      */
-    public function setTrainingPhrases(string $trainingPhrases): void
+    public function setDidType(string $didType): void
     {
-        $this->trainingPhrases = $trainingPhrases;
+        $this->didType = $didType;
     }
 
     /**
-     * Returns Message Texts.
+     * Returns Activation Cost.
      */
-    public function getMessageTexts(): string
+    public function getActivationCost(): int
     {
-        return $this->messageTexts;
+        return $this->activationCost;
     }
 
     /**
-     * Sets Message Texts.
+     * Sets Activation Cost.
      *
      * @required
-     * @maps message_texts
+     * @maps activation_cost
      */
-    public function setMessageTexts(string $messageTexts): void
+    public function setActivationCost(int $activationCost): void
     {
-        $this->messageTexts = $messageTexts;
+        $this->activationCost = $activationCost;
     }
 
     /**
-     * Returns Create Date.
+     * Returns Incoming.
      */
-    public function getCreateDate(): string
+    public function getIncoming(): ?string
     {
-        return $this->createDate;
+        return $this->incoming;
     }
 
     /**
-     * Sets Create Date.
+     * Sets Incoming.
      *
-     * @required
-     * @maps create_date
+     * @maps incoming
      */
-    public function setCreateDate(string $createDate): void
+    public function setIncoming(?string $incoming): void
     {
-        $this->createDate = $createDate;
+        $this->incoming = $incoming;
+    }
+
+    /**
+     * Returns Destination Detail.
+     */
+    public function getDestinationDetail(): ?string
+    {
+        return $this->destinationDetail;
+    }
+
+    /**
+     * Sets Destination Detail.
+     *
+     * @maps destination_detail
+     */
+    public function setDestinationDetail(?string $destinationDetail): void
+    {
+        $this->destinationDetail = $destinationDetail;
+    }
+
+    /**
+     * Returns Is Active.
+     *
+     * @return int|null|string
+     */
+    public function getIsActive()
+    {
+        return $this->isActive;
+    }
+
+    /**
+     * Sets Is Active.
+     *
+     * @maps isActive
+     * @mapsBy anyOf(oneOf(anyOf(int,null),anyOf(string,null)),null)
+     *
+     * @param int|null|string $isActive
+     */
+    public function setIsActive($isActive): void
+    {
+        $this->isActive = $isActive;
     }
 
     /**
@@ -194,12 +269,19 @@ class Data10 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['id']               = $this->id;
-        $json['ai_name']          = $this->aiName;
-        $json['display_name']     = $this->displayName;
-        $json['training_phrases'] = $this->trainingPhrases;
-        $json['message_texts']    = $this->messageTexts;
-        $json['create_date']      = $this->createDate;
+        $json['customer_code']      = $this->customerCode;
+        $json['id']                 = $this->id;
+        $json['active']             = $this->active;
+        $json['did']                = $this->did;
+        $json['did_type']           = $this->didType;
+        $json['activation_cost']    = $this->activationCost;
+        $json['incoming']           = $this->incoming;
+        $json['destination_detail'] = $this->destinationDetail;
+        $json['isActive']           =
+            ApiHelper::verifyTypes(
+                $this->isActive,
+                'anyOf(oneOf(anyOf(int,null),anyOf(string,null)),null)'
+            );
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

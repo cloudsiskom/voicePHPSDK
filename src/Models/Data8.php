@@ -22,138 +22,50 @@ class Data8 implements \JsonSerializable
     /**
      * @var string
      */
-    private $customerCode;
+    private $aiName;
 
     /**
      * @var string
      */
-    private $ivrName;
+    private $displayName;
 
     /**
      * @var string
      */
-    private $ivrTitle;
-
-    /**
-     * @var int
-     */
-    private $ivrParent;
+    private $trainingPhrases;
 
     /**
      * @var string
      */
-    private $ivrText;
+    private $messageTexts;
 
     /**
      * @var string
      */
-    private $language;
-
-    /**
-     * @var string
-     */
-    private $gender;
-
-    /**
-     * @var int
-     */
-    private $keyPressed;
-
-    /**
-     * @var string
-     */
-    private $exitKey;
-
-    /**
-     * @var int
-     */
-    private $backMenu;
-
-    /**
-     * @var string
-     */
-    private $mainMenu;
-
-    /**
-     * @var string
-     */
-    private $action;
-
-    /**
-     * @var string
-     */
-    private $actionDetail;
-
-    /**
-     * @var int
-     */
-    private $trying;
-
-    /**
-     * @var int
-     */
-    private $isActive;
-
-    /**
-     * @var Child[]
-     */
-    private $children;
+    private $createDate;
 
     /**
      * @param int $id
-     * @param string $customerCode
-     * @param string $ivrName
-     * @param string $ivrTitle
-     * @param int $ivrParent
-     * @param string $ivrText
-     * @param string $language
-     * @param string $gender
-     * @param int $keyPressed
-     * @param string $exitKey
-     * @param int $backMenu
-     * @param string $mainMenu
-     * @param string $action
-     * @param string $actionDetail
-     * @param int $trying
-     * @param int $isActive
-     * @param Child[] $children
+     * @param string $aiName
+     * @param string $displayName
+     * @param string $trainingPhrases
+     * @param string $messageTexts
+     * @param string $createDate
      */
     public function __construct(
         int $id,
-        string $customerCode,
-        string $ivrName,
-        string $ivrTitle,
-        int $ivrParent,
-        string $ivrText,
-        string $language,
-        string $gender,
-        int $keyPressed,
-        string $exitKey,
-        int $backMenu,
-        string $mainMenu,
-        string $action,
-        string $actionDetail,
-        int $trying,
-        int $isActive,
-        array $children
+        string $aiName,
+        string $displayName,
+        string $trainingPhrases,
+        string $messageTexts,
+        string $createDate
     ) {
         $this->id = $id;
-        $this->customerCode = $customerCode;
-        $this->ivrName = $ivrName;
-        $this->ivrTitle = $ivrTitle;
-        $this->ivrParent = $ivrParent;
-        $this->ivrText = $ivrText;
-        $this->language = $language;
-        $this->gender = $gender;
-        $this->keyPressed = $keyPressed;
-        $this->exitKey = $exitKey;
-        $this->backMenu = $backMenu;
-        $this->mainMenu = $mainMenu;
-        $this->action = $action;
-        $this->actionDetail = $actionDetail;
-        $this->trying = $trying;
-        $this->isActive = $isActive;
-        $this->children = $children;
+        $this->aiName = $aiName;
+        $this->displayName = $displayName;
+        $this->trainingPhrases = $trainingPhrases;
+        $this->messageTexts = $messageTexts;
+        $this->createDate = $createDate;
     }
 
     /**
@@ -176,311 +88,98 @@ class Data8 implements \JsonSerializable
     }
 
     /**
-     * Returns Customer Code.
+     * Returns Ai Name.
      */
-    public function getCustomerCode(): string
+    public function getAiName(): string
     {
-        return $this->customerCode;
+        return $this->aiName;
     }
 
     /**
-     * Sets Customer Code.
+     * Sets Ai Name.
      *
      * @required
-     * @maps customer_code
+     * @maps ai_name
      */
-    public function setCustomerCode(string $customerCode): void
+    public function setAiName(string $aiName): void
     {
-        $this->customerCode = $customerCode;
+        $this->aiName = $aiName;
     }
 
     /**
-     * Returns Ivr Name.
+     * Returns Display Name.
      */
-    public function getIvrName(): string
+    public function getDisplayName(): string
     {
-        return $this->ivrName;
+        return $this->displayName;
     }
 
     /**
-     * Sets Ivr Name.
+     * Sets Display Name.
      *
      * @required
-     * @maps ivr_name
+     * @maps display_name
      */
-    public function setIvrName(string $ivrName): void
+    public function setDisplayName(string $displayName): void
     {
-        $this->ivrName = $ivrName;
+        $this->displayName = $displayName;
     }
 
     /**
-     * Returns Ivr Title.
+     * Returns Training Phrases.
      */
-    public function getIvrTitle(): string
+    public function getTrainingPhrases(): string
     {
-        return $this->ivrTitle;
+        return $this->trainingPhrases;
     }
 
     /**
-     * Sets Ivr Title.
+     * Sets Training Phrases.
      *
      * @required
-     * @maps ivr_title
+     * @maps training_phrases
      */
-    public function setIvrTitle(string $ivrTitle): void
+    public function setTrainingPhrases(string $trainingPhrases): void
     {
-        $this->ivrTitle = $ivrTitle;
+        $this->trainingPhrases = $trainingPhrases;
     }
 
     /**
-     * Returns Ivr Parent.
+     * Returns Message Texts.
      */
-    public function getIvrParent(): int
+    public function getMessageTexts(): string
     {
-        return $this->ivrParent;
+        return $this->messageTexts;
     }
 
     /**
-     * Sets Ivr Parent.
+     * Sets Message Texts.
      *
      * @required
-     * @maps ivr_parent
+     * @maps message_texts
      */
-    public function setIvrParent(int $ivrParent): void
+    public function setMessageTexts(string $messageTexts): void
     {
-        $this->ivrParent = $ivrParent;
+        $this->messageTexts = $messageTexts;
     }
 
     /**
-     * Returns Ivr Text.
+     * Returns Create Date.
      */
-    public function getIvrText(): string
+    public function getCreateDate(): string
     {
-        return $this->ivrText;
+        return $this->createDate;
     }
 
     /**
-     * Sets Ivr Text.
+     * Sets Create Date.
      *
      * @required
-     * @maps ivr_text
+     * @maps create_date
      */
-    public function setIvrText(string $ivrText): void
+    public function setCreateDate(string $createDate): void
     {
-        $this->ivrText = $ivrText;
-    }
-
-    /**
-     * Returns Language.
-     */
-    public function getLanguage(): string
-    {
-        return $this->language;
-    }
-
-    /**
-     * Sets Language.
-     *
-     * @required
-     * @maps language
-     */
-    public function setLanguage(string $language): void
-    {
-        $this->language = $language;
-    }
-
-    /**
-     * Returns Gender.
-     */
-    public function getGender(): string
-    {
-        return $this->gender;
-    }
-
-    /**
-     * Sets Gender.
-     *
-     * @required
-     * @maps gender
-     */
-    public function setGender(string $gender): void
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * Returns Key Pressed.
-     */
-    public function getKeyPressed(): int
-    {
-        return $this->keyPressed;
-    }
-
-    /**
-     * Sets Key Pressed.
-     *
-     * @required
-     * @maps key_pressed
-     */
-    public function setKeyPressed(int $keyPressed): void
-    {
-        $this->keyPressed = $keyPressed;
-    }
-
-    /**
-     * Returns Exit Key.
-     */
-    public function getExitKey(): string
-    {
-        return $this->exitKey;
-    }
-
-    /**
-     * Sets Exit Key.
-     *
-     * @required
-     * @maps exit_key
-     */
-    public function setExitKey(string $exitKey): void
-    {
-        $this->exitKey = $exitKey;
-    }
-
-    /**
-     * Returns Back Menu.
-     */
-    public function getBackMenu(): int
-    {
-        return $this->backMenu;
-    }
-
-    /**
-     * Sets Back Menu.
-     *
-     * @required
-     * @maps back_menu
-     */
-    public function setBackMenu(int $backMenu): void
-    {
-        $this->backMenu = $backMenu;
-    }
-
-    /**
-     * Returns Main Menu.
-     */
-    public function getMainMenu(): string
-    {
-        return $this->mainMenu;
-    }
-
-    /**
-     * Sets Main Menu.
-     *
-     * @required
-     * @maps main_menu
-     */
-    public function setMainMenu(string $mainMenu): void
-    {
-        $this->mainMenu = $mainMenu;
-    }
-
-    /**
-     * Returns Action.
-     */
-    public function getAction(): string
-    {
-        return $this->action;
-    }
-
-    /**
-     * Sets Action.
-     *
-     * @required
-     * @maps action
-     */
-    public function setAction(string $action): void
-    {
-        $this->action = $action;
-    }
-
-    /**
-     * Returns Action Detail.
-     */
-    public function getActionDetail(): string
-    {
-        return $this->actionDetail;
-    }
-
-    /**
-     * Sets Action Detail.
-     *
-     * @required
-     * @maps action_detail
-     */
-    public function setActionDetail(string $actionDetail): void
-    {
-        $this->actionDetail = $actionDetail;
-    }
-
-    /**
-     * Returns Trying.
-     */
-    public function getTrying(): int
-    {
-        return $this->trying;
-    }
-
-    /**
-     * Sets Trying.
-     *
-     * @required
-     * @maps trying
-     */
-    public function setTrying(int $trying): void
-    {
-        $this->trying = $trying;
-    }
-
-    /**
-     * Returns Is Active.
-     */
-    public function getIsActive(): int
-    {
-        return $this->isActive;
-    }
-
-    /**
-     * Sets Is Active.
-     *
-     * @required
-     * @maps isActive
-     */
-    public function setIsActive(int $isActive): void
-    {
-        $this->isActive = $isActive;
-    }
-
-    /**
-     * Returns Children.
-     *
-     * @return Child[]
-     */
-    public function getChildren(): array
-    {
-        return $this->children;
-    }
-
-    /**
-     * Sets Children.
-     *
-     * @required
-     * @maps children
-     *
-     * @param Child[] $children
-     */
-    public function setChildren(array $children): void
-    {
-        $this->children = $children;
+        $this->createDate = $createDate;
     }
 
     /**
@@ -495,23 +194,12 @@ class Data8 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['id']            = $this->id;
-        $json['customer_code'] = $this->customerCode;
-        $json['ivr_name']      = $this->ivrName;
-        $json['ivr_title']     = $this->ivrTitle;
-        $json['ivr_parent']    = $this->ivrParent;
-        $json['ivr_text']      = $this->ivrText;
-        $json['language']      = $this->language;
-        $json['gender']        = $this->gender;
-        $json['key_pressed']   = $this->keyPressed;
-        $json['exit_key']      = $this->exitKey;
-        $json['back_menu']     = $this->backMenu;
-        $json['main_menu']     = $this->mainMenu;
-        $json['action']        = $this->action;
-        $json['action_detail'] = $this->actionDetail;
-        $json['trying']        = $this->trying;
-        $json['isActive']      = $this->isActive;
-        $json['children']      = $this->children;
+        $json['id']               = $this->id;
+        $json['ai_name']          = $this->aiName;
+        $json['display_name']     = $this->displayName;
+        $json['training_phrases'] = $this->trainingPhrases;
+        $json['message_texts']    = $this->messageTexts;
+        $json['create_date']      = $this->createDate;
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

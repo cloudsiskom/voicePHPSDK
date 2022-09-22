@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class DeviceController extends BaseController
 {
@@ -29,6 +28,11 @@ class DeviceController extends BaseController
     }
 
     /**
+     * DEVICE_TYPE :
+     *
+     * \*   TRUNK (This will be sip trunk with dedicated IP Address)
+     * \*   EXTEN (Extension)
+     *
      * @param Models\DeviceRequest $body
      *
      * @return Models\Device Response from the API call
@@ -38,7 +42,7 @@ class DeviceController extends BaseController
     public function device(Models\DeviceRequest $body): Models\Device
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/extension/new';
+        $_queryUrl = $this->config->getBaseUri() . '/extension/new';
 
         //prepare headers
         $_headers = [
@@ -99,7 +103,7 @@ class DeviceController extends BaseController
     public function devcieList(): Models\DevcieList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/extension/list';
+        $_queryUrl = $this->config->getBaseUri() . '/extension/list';
 
         //prepare headers
         $_headers = [
@@ -149,7 +153,7 @@ class DeviceController extends BaseController
     public function deviceEdit(Models\DeviceEditRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/extension/edit';
+        $_queryUrl = $this->config->getBaseUri() . '/extension/edit';
 
         //prepare headers
         $_headers = [
@@ -210,7 +214,7 @@ class DeviceController extends BaseController
     public function deviceDelete(Models\DeviceDeleteRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/extension/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/extension/delete';
 
         //prepare headers
         $_headers = [

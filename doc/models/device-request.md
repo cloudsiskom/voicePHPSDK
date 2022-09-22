@@ -19,11 +19,11 @@
 
 ```json
 {
-  "device_type": "TRUNK",
-  "device_owner": "kiki",
-  "extension": "1424500000013",
-  "secret": "padamunegeri",
-  "ip_address": "192.168.1.1"
+  "device_type": "[DEVICE_TYPE]",
+  "device_owner": "[DEVICE_OWNER]",
+  "extension": "[DEVICE_NAME / EXTENSION]",
+  "secret": "[DEVICE_SECRET]",
+  "ip_address": "[DEVICE_IP_ADDRESS]"
 }
 ```
 

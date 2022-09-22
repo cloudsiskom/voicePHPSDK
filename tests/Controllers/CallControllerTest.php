@@ -36,23 +36,30 @@ class CallControllerTest extends TestCase
 
 
     /**
-     * Todo Add description for test testBlast
+     * SUPPORTED **LANGUAGE** :
+
+\* id-ID  
+\* en-US
+
+**GENDER** :
+
+\* MALE  
+\* FEMALE
      */
     public function testBlast()
     {
         // Parameters for the API call
         $body = TestHelper::getJsonMapper()->mapClass(json_decode(
             '{
-  "destination": "62127867676",
-  "text_to_speech": "Hai.... Selamat datang saudara-' .
-            'saudaraku, anda adalah pelanggan utama hari ini, selamat yaaa gaeees!",
-  "language": "' .
-            'id-ID",
-  "gender": "FEMALE",
-  "repeat": "2",
-  "external_id": "93894893483984938",' .
-            '
-  "callback_url": "http"
+  "destination": "[DESTINATION]",
+  "text_to_speech": "[TEXT_TO_SPEECH]",
+  "langua' .
+            'ge": "[LANGUAGE]",
+  "gender": "[GENDER]",
+  "repeat": 2,
+  "external_id": "[EXTERNAL' .
+            '_ID]",
+  "callback_url": "https://eobub4g7qinc475.m.pipedream.net"
 }'),
             'VoiceAPILib\Models\\Blastrequest'
         );

@@ -9,17 +9,21 @@
 
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
-| `id` | `int` | Required | - | getId(): int | setId(int id): void |
-| `aiName` | `string` | Required | - | getAiName(): string | setAiName(string aiName): void |
-| `createDate` | `string` | Required | - | getCreateDate(): string | setCreateDate(string createDate): void |
+| `did` | `string` | Required | - | getDid(): string | setDid(string did): void |
+| `activationCost` | `int` | Required | - | getActivationCost(): int | setActivationCost(int activationCost): void |
+| `monthlyCost` | `int` | Required | - | getMonthlyCost(): int | setMonthlyCost(int monthlyCost): void |
+| `didType` | `string` | Required | - | getDidType(): string | setDidType(string didType): void |
+| `active` | `int` | Required | - | getActive(): int | setActive(int active): void |
 
 ## Example (as JSON)
 
 ```json
 {
-  "id": 1,
-  "ai_name": "BANK_BKKN",
-  "create_date": "2022-08-15T17:13:43.000Z"
+  "did": "6285873935693",
+  "activation_cost": 100000,
+  "monthly_cost": 100000,
+  "did_type": "MVN",
+  "active": 1
 }
 ```
 

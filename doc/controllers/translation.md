@@ -33,7 +33,7 @@ function translationDelete(TranslationDeleteRequest $body): void
 ## Example Usage
 
 ```php
-$body_transactionId = '64c7a1e218b004054e49d304814cd1b0';
+$body_transactionId = '[TRANSACTION_ID]';
 $body = new Models\TranslationDeleteRequest(
     $body_transactionId
 );
@@ -67,11 +67,11 @@ function translationSetup(TranslationSetupRequest $body): TranslationSetup
 ## Example Usage
 
 ```php
-$body_fromNumber = '62811949736';
-$body_callerDidgateway = '6285757920463';
-$body_calledDidgateway = '6285757920463';
-$body_destinationNumber = '6285161422932';
-$body_externalId = '1000';
+$body_fromNumber = '[FROM_NUMBER]';
+$body_callerDidgateway = '[DID_GATEWAY]';
+$body_calledDidgateway = '[DID_GATEWAY]';
+$body_destinationNumber = '[DESTINATION]';
+$body_externalId = '[EXTERNAL_ID]';
 $body = new Models\TranslationSetupRequest(
     $body_fromNumber,
     $body_callerDidgateway,

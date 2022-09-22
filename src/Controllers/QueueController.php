@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class QueueController extends BaseController
 {
@@ -29,6 +28,15 @@ class QueueController extends BaseController
     }
 
     /**
+     * RING_STRATEGY :
+     *
+     * \*   ringall: ring all available channels until one answers (default)
+     * \*   roundrobin: take turns ringing each available interface (deprecated in 1.4, use rrmemory)
+     * \*   leastrecent: ring interface which was least recently called by this queue
+     * \*   fewestcalls: ring the one with fewest completed calls from this queue
+     * \*   random: ring random interface
+     * \*   rrmemory: round robin with memory, remember where we left off last ring pass
+     *
      * @param Models\QueueNewRequest $body
      *
      * @return Models\QueueNew Response from the API call
@@ -38,7 +46,7 @@ class QueueController extends BaseController
     public function queueNew(Models\QueueNewRequest $body): Models\QueueNew
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/queue/new';
+        $_queryUrl = $this->config->getBaseUri() . '/queue/new';
 
         //prepare headers
         $_headers = [
@@ -91,7 +99,7 @@ class QueueController extends BaseController
     public function queueDelete(Models\QueueDeleteRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/queue/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/queue/delete';
 
         //prepare headers
         $_headers = [
@@ -150,7 +158,7 @@ class QueueController extends BaseController
     public function queueList(): Models\QueueList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/queue/list';
+        $_queryUrl = $this->config->getBaseUri() . '/queue/list';
 
         //prepare headers
         $_headers = [
@@ -191,6 +199,11 @@ class QueueController extends BaseController
     }
 
     /**
+     * **AGENT_TYPE** :
+     *
+     * \*   SIP (Agent is SIP device / Extension)
+     * \*   local (Agent is AGENT_CODE)
+     *
      * @param Models\QueueAddAgentRequest $body
      *
      * @return void Response from the API call
@@ -200,7 +213,7 @@ class QueueController extends BaseController
     public function queueAddAgent(Models\QueueAddAgentRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/queue/agent';
+        $_queryUrl = $this->config->getBaseUri() . '/queue/agent';
 
         //prepare headers
         $_headers = [
@@ -239,7 +252,12 @@ class QueueController extends BaseController
 
         //Error handling using HTTP status codes
         if ($response->code == 404) {
-            throw new ApiException('Not Found', $_httpRequest, $_httpResponse);
+            throw $this->createExceptionFromJson(
+                '\\VoiceAPILib\\Exceptions\\QueueAddAgentException',
+                'Not Found',
+                $_httpRequest,
+                $_httpResponse
+            );
         }
 
         //handle errors defined at the API level
@@ -247,6 +265,11 @@ class QueueController extends BaseController
     }
 
     /**
+     * **AGENT_TYPE** :
+     *
+     * \* SIP (Agent is SIP device / Extension)
+     * \* local (Agent is AGENT_CODE)
+     *
      * @param Models\QueueRemoveAgentRequest $body
      *
      * @return void Response from the API call
@@ -256,7 +279,7 @@ class QueueController extends BaseController
     public function queueRemoveAgent(Models\QueueRemoveAgentRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/queue/agent/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/queue/agent/delete';
 
         //prepare headers
         $_headers = [

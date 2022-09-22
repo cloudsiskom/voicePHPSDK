@@ -19,11 +19,11 @@
 
 ```json
 {
-  "from_number": "62811949736",
-  "caller_didgateway": "6285757920463",
-  "called_didgateway": "6285757920463",
-  "destination_number": "6285161422932",
-  "external_id": "1000"
+  "from_number": "[FROM_NUMBER]",
+  "caller_didgateway": "[DID_GATEWAY]",
+  "called_didgateway": "[DID_GATEWAY]",
+  "destination_number": "[DESTINATION]",
+  "external_id": "[EXTERNAL_ID]"
 }
 ```
 

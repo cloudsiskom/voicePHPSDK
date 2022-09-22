@@ -10,7 +10,7 @@
 | Name | Type | Tags | Description | Getter | Setter |
 |  --- | --- | --- | --- | --- | --- |
 | `response` | `bool` | Required | - | getResponse(): bool | setResponse(bool response): void |
-| `data` | [`Data6`](../../doc/models/data-6.md) | Required | - | getData(): Data6 | setData(Data6 data): void |
+| `data` | [`Data5`](../../doc/models/data-5.md) | Required | - | getData(): Data5 | setData(Data5 data): void |
 
 ## Example (as JSON)
 

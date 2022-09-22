@@ -16,8 +16,8 @@
 
 ```json
 {
-  "queue_name": "queue-151-3",
-  "ring_strategy": "ringall"
+  "queue_name": "[QUEUE_NAME]",
+  "ring_strategy": "[RING_STRATEGY]"
 }
 ```
 

@@ -15,6 +15,11 @@ use stdClass;
 class Data6 implements \JsonSerializable
 {
     /**
+     * @var int
+     */
+    private $queueId;
+
+    /**
      * @var string
      */
     private $queueName;
@@ -22,16 +27,51 @@ class Data6 implements \JsonSerializable
     /**
      * @var string
      */
-    private $ringStrategy;
+    private $musiclass;
 
     /**
-     * @param string $queueName
-     * @param string $ringStrategy
+     * @var string
      */
-    public function __construct(string $queueName, string $ringStrategy)
+    private $strategy;
+
+    /**
+     * @var Member[]
+     */
+    private $members;
+
+    /**
+     * @param int $queueId
+     * @param string $queueName
+     * @param string $musiclass
+     * @param string $strategy
+     * @param Member[] $members
+     */
+    public function __construct(int $queueId, string $queueName, string $musiclass, string $strategy, array $members)
     {
+        $this->queueId = $queueId;
         $this->queueName = $queueName;
-        $this->ringStrategy = $ringStrategy;
+        $this->musiclass = $musiclass;
+        $this->strategy = $strategy;
+        $this->members = $members;
+    }
+
+    /**
+     * Returns Queue Id.
+     */
+    public function getQueueId(): int
+    {
+        return $this->queueId;
+    }
+
+    /**
+     * Sets Queue Id.
+     *
+     * @required
+     * @maps queue_id
+     */
+    public function setQueueId(int $queueId): void
+    {
+        $this->queueId = $queueId;
     }
 
     /**
@@ -54,22 +94,64 @@ class Data6 implements \JsonSerializable
     }
 
     /**
-     * Returns Ring Strategy.
+     * Returns Musiclass.
      */
-    public function getRingStrategy(): string
+    public function getMusiclass(): string
     {
-        return $this->ringStrategy;
+        return $this->musiclass;
     }
 
     /**
-     * Sets Ring Strategy.
+     * Sets Musiclass.
      *
      * @required
-     * @maps ring_strategy
+     * @maps musiclass
      */
-    public function setRingStrategy(string $ringStrategy): void
+    public function setMusiclass(string $musiclass): void
     {
-        $this->ringStrategy = $ringStrategy;
+        $this->musiclass = $musiclass;
+    }
+
+    /**
+     * Returns Strategy.
+     */
+    public function getStrategy(): string
+    {
+        return $this->strategy;
+    }
+
+    /**
+     * Sets Strategy.
+     *
+     * @required
+     * @maps strategy
+     */
+    public function setStrategy(string $strategy): void
+    {
+        $this->strategy = $strategy;
+    }
+
+    /**
+     * Returns Members.
+     *
+     * @return Member[]
+     */
+    public function getMembers(): array
+    {
+        return $this->members;
+    }
+
+    /**
+     * Sets Members.
+     *
+     * @required
+     * @maps members
+     *
+     * @param Member[] $members
+     */
+    public function setMembers(array $members): void
+    {
+        $this->members = $members;
     }
 
     /**
@@ -84,8 +166,11 @@ class Data6 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['queue_name']    = $this->queueName;
-        $json['ring_strategy'] = $this->ringStrategy;
+        $json['queue_id']   = $this->queueId;
+        $json['queue_name'] = $this->queueName;
+        $json['musiclass']  = $this->musiclass;
+        $json['strategy']   = $this->strategy;
+        $json['members']    = $this->members;
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

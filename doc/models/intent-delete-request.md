@@ -16,8 +16,8 @@
 
 ```json
 {
-  "ai_name": "BANK_BKKN",
-  "display_name": "kamu siapa yang buat"
+  "ai_name": "[AI_NAME]",
+  "display_name": "[DISPLAY_NAME]"
 }
 ```
 

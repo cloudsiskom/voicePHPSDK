@@ -11,6 +11,16 @@ $callController = $client->getCallController();
 
 # Blast
 
+SUPPORTED **LANGUAGE** :
+
+\* id-ID  
+\* en-US
+
+**GENDER** :
+
+\* MALE  
+\* FEMALE
+
 ```php
 function blast(Blastrequest $body): Blast
 ```
@@ -28,13 +38,13 @@ function blast(Blastrequest $body): Blast
 ## Example Usage
 
 ```php
-$body_destination = '62127867676';
-$body_textToSpeech = 'Hai.... Selamat datang saudara-saudaraku, anda adalah pelanggan utama hari ini, selamat yaaa gaeees!';
-$body_language = 'id-ID';
-$body_gender = 'FEMALE';
-$body_repeat = '2';
-$body_externalId = '93894893483984938';
-$body_callbackUrl = 'http';
+$body_destination = '[DESTINATION]';
+$body_textToSpeech = '[TEXT_TO_SPEECH]';
+$body_language = '[LANGUAGE]';
+$body_gender = '[GENDER]';
+$body_repeat = 2;
+$body_externalId = '[EXTERNAL_ID]';
+$body_callbackUrl = 'https://eobub4g7qinc475.m.pipedream.net';
 $body = new Models\Blastrequest(
     $body_destination,
     $body_textToSpeech,

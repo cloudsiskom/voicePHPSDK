@@ -19,6 +19,15 @@ $queueController = $client->getQueueController();
 
 # Queue New
 
+RING_STRATEGY :
+
+\*   ringall: ring all available channels until one answers (default)
+\*   roundrobin: take turns ringing each available interface (deprecated in 1.4, use rrmemory)
+\*   leastrecent: ring interface which was least recently called by this queue
+\*   fewestcalls: ring the one with fewest completed calls from this queue
+\*   random: ring random interface
+\*   rrmemory: round robin with memory, remember where we left off last ring pass
+
 ```php
 function queueNew(QueueNewRequest $body): QueueNew
 ```
@@ -36,8 +45,8 @@ function queueNew(QueueNewRequest $body): QueueNew
 ## Example Usage
 
 ```php
-$body_queueName = 'queue-151-3';
-$body_ringStrategy = 'ringall';
+$body_queueName = '[QUEUE_NAME]';
+$body_ringStrategy = '[RING_STRATEGY]';
 $body = new Models\QueueNewRequest(
     $body_queueName,
     $body_ringStrategy
@@ -78,7 +87,7 @@ function queueDelete(QueueDeleteRequest $body): void
 ## Example Usage
 
 ```php
-$body_queueName = 'queue-151-3';
+$body_queueName = '[QUEUE_NAME]';
 $body = new Models\QueueDeleteRequest(
     $body_queueName
 );
@@ -140,6 +149,11 @@ $result = $queueController->queueList();
 
 # Queue Add Agent
 
+**AGENT_TYPE** :
+
+\*   SIP (Agent is SIP device / Extension)
+\*   local (Agent is AGENT_CODE)
+
 ```php
 function queueAddAgent(QueueAddAgentRequest $body): void
 ```
@@ -157,9 +171,9 @@ function queueAddAgent(QueueAddAgentRequest $body): void
 ## Example Usage
 
 ```php
-$body_queueName = '';
-$body_agents = '';
-$body_agentType = '';
+$body_queueName = '[QUEUE_NAME]';
+$body_agents = '[AGENT]';
+$body_agentType = '[AGENT_TYPE]';
 $body = new Models\QueueAddAgentRequest(
     $body_queueName,
     $body_agents,
@@ -173,10 +187,15 @@ $queueController->queueAddAgent($body);
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 404 | Not Found | `ApiException` |
+| 404 | Not Found | [`QueueAddAgentException`](../../doc/models/queue-add-agent-exception.md) |
 
 
 # Queue Remove Agent
+
+**AGENT_TYPE** :
+
+\* SIP (Agent is SIP device / Extension)  
+\* local (Agent is AGENT_CODE)
 
 ```php
 function queueRemoveAgent(QueueRemoveAgentRequest $body): void
@@ -195,9 +214,9 @@ function queueRemoveAgent(QueueRemoveAgentRequest $body): void
 ## Example Usage
 
 ```php
-$body_queueName = '96YSK-1';
-$body_agents = '961000001';
-$body_agentType = 'Local';
+$body_queueName = '[QUEUE_NAME]';
+$body_agents = '[agent]';
+$body_agentType = '[AGENT_TYPE]';
 $body = new Models\QueueRemoveAgentRequest(
     $body_queueName,
     $body_agents,

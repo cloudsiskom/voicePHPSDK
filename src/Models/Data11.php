@@ -15,87 +15,139 @@ use stdClass;
 class Data11 implements \JsonSerializable
 {
     /**
+     * @var string
+     */
+    private $did;
+
+    /**
      * @var int
      */
-    private $id;
+    private $activationCost;
+
+    /**
+     * @var int
+     */
+    private $monthlyCost;
 
     /**
      * @var string
      */
-    private $aiName;
+    private $didType;
 
     /**
-     * @var string
+     * @var int
      */
-    private $createDate;
+    private $active;
 
     /**
-     * @param int $id
-     * @param string $aiName
-     * @param string $createDate
+     * @param string $did
+     * @param int $activationCost
+     * @param int $monthlyCost
+     * @param string $didType
+     * @param int $active
      */
-    public function __construct(int $id, string $aiName, string $createDate)
+    public function __construct(string $did, int $activationCost, int $monthlyCost, string $didType, int $active)
     {
-        $this->id = $id;
-        $this->aiName = $aiName;
-        $this->createDate = $createDate;
+        $this->did = $did;
+        $this->activationCost = $activationCost;
+        $this->monthlyCost = $monthlyCost;
+        $this->didType = $didType;
+        $this->active = $active;
     }
 
     /**
-     * Returns Id.
+     * Returns Did.
      */
-    public function getId(): int
+    public function getDid(): string
     {
-        return $this->id;
+        return $this->did;
     }
 
     /**
-     * Sets Id.
+     * Sets Did.
      *
      * @required
-     * @maps id
+     * @maps did
      */
-    public function setId(int $id): void
+    public function setDid(string $did): void
     {
-        $this->id = $id;
+        $this->did = $did;
     }
 
     /**
-     * Returns Ai Name.
+     * Returns Activation Cost.
      */
-    public function getAiName(): string
+    public function getActivationCost(): int
     {
-        return $this->aiName;
+        return $this->activationCost;
     }
 
     /**
-     * Sets Ai Name.
+     * Sets Activation Cost.
      *
      * @required
-     * @maps ai_name
+     * @maps activation_cost
      */
-    public function setAiName(string $aiName): void
+    public function setActivationCost(int $activationCost): void
     {
-        $this->aiName = $aiName;
+        $this->activationCost = $activationCost;
     }
 
     /**
-     * Returns Create Date.
+     * Returns Monthly Cost.
      */
-    public function getCreateDate(): string
+    public function getMonthlyCost(): int
     {
-        return $this->createDate;
+        return $this->monthlyCost;
     }
 
     /**
-     * Sets Create Date.
+     * Sets Monthly Cost.
      *
      * @required
-     * @maps create_date
+     * @maps monthly_cost
      */
-    public function setCreateDate(string $createDate): void
+    public function setMonthlyCost(int $monthlyCost): void
     {
-        $this->createDate = $createDate;
+        $this->monthlyCost = $monthlyCost;
+    }
+
+    /**
+     * Returns Did Type.
+     */
+    public function getDidType(): string
+    {
+        return $this->didType;
+    }
+
+    /**
+     * Sets Did Type.
+     *
+     * @required
+     * @maps did_type
+     */
+    public function setDidType(string $didType): void
+    {
+        $this->didType = $didType;
+    }
+
+    /**
+     * Returns Active.
+     */
+    public function getActive(): int
+    {
+        return $this->active;
+    }
+
+    /**
+     * Sets Active.
+     *
+     * @required
+     * @maps active
+     */
+    public function setActive(int $active): void
+    {
+        $this->active = $active;
     }
 
     /**
@@ -110,9 +162,11 @@ class Data11 implements \JsonSerializable
     public function jsonSerialize(bool $asArrayWhenEmpty = false)
     {
         $json = [];
-        $json['id']          = $this->id;
-        $json['ai_name']     = $this->aiName;
-        $json['create_date'] = $this->createDate;
+        $json['did']             = $this->did;
+        $json['activation_cost'] = $this->activationCost;
+        $json['monthly_cost']    = $this->monthlyCost;
+        $json['did_type']        = $this->didType;
+        $json['active']          = $this->active;
 
         return (!$asArrayWhenEmpty && empty($json)) ? new stdClass() : $json;
     }

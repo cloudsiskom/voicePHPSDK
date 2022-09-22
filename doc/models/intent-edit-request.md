@@ -18,10 +18,10 @@
 
 ```json
 {
-  "ai_name": "BANK_BKKN",
-  "display_name": "kamu siapa yang buat",
-  "training_phrases": "hi kamu siapa yang buat;siapa yang buat;programmermu siapa;apa yang kamu lakukan",
-  "message_texts": "Aku lahir dari batu !;mau tauuu aja"
+  "ai_name": "[AI_NAME]",
+  "display_name": "[DISPLAY_NAME]",
+  "training_phrases": "[TRAINING_PHRASE,SPARATED BY ;]",
+  "message_texts": "[RESPONSE_TEXT SPARATED BY ;]"
 }
 ```
 

@@ -1,5 +1,6 @@
 {
     "name": "apimatic/voiceapi",
+    "description": "Voice API request",
     "type": "library",
     "keywords": [
         "Voice API",

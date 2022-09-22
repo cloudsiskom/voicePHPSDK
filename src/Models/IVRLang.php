@@ -20,13 +20,13 @@ class IVRLang implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data9[]
+     * @var Data7[]
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data9[] $data
+     * @param Data7[] $data
      */
     public function __construct(bool $response, array $data)
     {
@@ -56,7 +56,7 @@ class IVRLang implements \JsonSerializable
     /**
      * Returns Data.
      *
-     * @return Data9[]
+     * @return Data7[]
      */
     public function getData(): array
     {
@@ -69,7 +69,7 @@ class IVRLang implements \JsonSerializable
      * @required
      * @maps data
      *
-     * @param Data9[] $data
+     * @param Data7[] $data
      */
     public function setData(array $data): void
     {

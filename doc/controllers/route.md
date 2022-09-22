@@ -34,9 +34,9 @@ function routeIncoming(RouteIncomingRequest $body): RouteIncoming
 ## Example Usage
 
 ```php
-$body_did = '6285757920463';
-$body_destination = 'TRUNK';
-$body_destinationDetail = 'CVAI';
+$body_did = '[DID]';
+$body_destination = '[DESTINATION]';
+$body_destinationDetail = '[DESTINATION_DETAIL]';
 $body = new Models\RouteIncomingRequest(
     $body_did,
     $body_destination,
@@ -77,11 +77,11 @@ function routeOutgoing(RouteOutgoingRequest $body): RouteOutgoing
 ## Example Usage
 
 ```php
-$body_routeName = 'test';
-$body_device = '8210000000001';
-$body_routeTo = 'RANDOM';
-$body_routeDetail = 'RDM1';
-$body_routePrefix = '198767';
+$body_routeName = '[ROUTE_NAME]';
+$body_device = '[DEVICE]';
+$body_routeTo = '[ROUTE_DESTINATION]';
+$body_routeDetail = '[DESTINATION_DETAIL]';
+$body_routePrefix = '[PREFIX]';
 $body = new Models\RouteOutgoingRequest(
     $body_routeName,
     $body_device,
@@ -130,7 +130,7 @@ $result = $routeController->routeList();
     {
       "id": 57,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285757920462",
       "destination": "DTMFTEST",
       "destination_detail": null,
@@ -140,7 +140,7 @@ $result = $routeController->routeList();
     {
       "id": 65,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285592055238",
       "destination": "CVAI",
       "destination_detail": "BANK_BKKN",
@@ -150,7 +150,7 @@ $result = $routeController->routeList();
     {
       "id": 69,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "02150995134",
       "destination": "IVR",
       "destination_detail": "TOKO_BUAH",
@@ -160,7 +160,7 @@ $result = $routeController->routeList();
     {
       "id": 72,
       "transaction_id": null,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "did": "6285757920463",
       "destination": "TRUNK",
       "destination_detail": "CVAI",
@@ -171,7 +171,7 @@ $result = $routeController->routeList();
   "outgoing_route": [
     {
       "id": 582,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "extension": "ALL",
       "route_to": "PROVIDER",
       "route_detail": "6285592055236",
@@ -181,7 +181,7 @@ $result = $routeController->routeList();
     },
     {
       "id": 583,
-      "customer_code": "YASS",
+      "customer_code": "GOJEK",
       "extension": "8210000000001",
       "route_to": "RANDOM",
       "route_detail": "RDM1",

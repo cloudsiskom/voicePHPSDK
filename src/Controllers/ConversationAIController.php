@@ -19,7 +19,6 @@ use VoiceAPILib\Http\HttpResponse;
 use VoiceAPILib\Http\HttpMethod;
 use VoiceAPILib\Http\HttpContext;
 use VoiceAPILib\Http\HttpCallBack;
-use VoiceAPILib\Server;
 
 class ConversationAIController extends BaseController
 {
@@ -38,7 +37,7 @@ class ConversationAIController extends BaseController
     public function createIntent(Models\CreateIntentRequest $body): void
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/intent/create';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/intent/create';
 
         //prepare headers
         $_headers = [
@@ -99,7 +98,7 @@ class ConversationAIController extends BaseController
     public function intentQuery(Models\IntentQueryRequest $body): Models\IntentQuery
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/intent/query';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/intent/query';
 
         //prepare headers
         $_headers = [
@@ -150,7 +149,7 @@ class ConversationAIController extends BaseController
     public function intentList(): Models\IntentList
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/intent/list';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/intent/list';
 
         //prepare headers
         $_headers = [
@@ -200,7 +199,7 @@ class ConversationAIController extends BaseController
     public function intentEdit(Models\IntentEditRequest $body): Models\IntentEdit
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/intent/edit';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/intent/edit';
 
         //prepare headers
         $_headers = [
@@ -251,7 +250,7 @@ class ConversationAIController extends BaseController
     public function aIName(): Models\AIName
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/getname';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/getname';
 
         //prepare headers
         $_headers = [
@@ -301,7 +300,7 @@ class ConversationAIController extends BaseController
     public function intentDelete(Models\IntentDeleteRequest $body): Models\IntentDelete
     {
         //prepare query string for API call
-        $_queryUrl = $this->config->getBaseUri(Server::SERVER_1) . '/ai/intent/delete';
+        $_queryUrl = $this->config->getBaseUri() . '/ai/intent/delete';
 
         //prepare headers
         $_headers = [

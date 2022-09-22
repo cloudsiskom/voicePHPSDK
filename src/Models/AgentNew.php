@@ -20,15 +20,15 @@ class AgentNew implements \JsonSerializable
     private $response;
 
     /**
-     * @var Data3
+     * @var Data2
      */
     private $data;
 
     /**
      * @param bool $response
-     * @param Data3 $data
+     * @param Data2 $data
      */
-    public function __construct(bool $response, Data3 $data)
+    public function __construct(bool $response, Data2 $data)
     {
         $this->response = $response;
         $this->data = $data;
@@ -56,7 +56,7 @@ class AgentNew implements \JsonSerializable
     /**
      * Returns Data.
      */
-    public function getData(): Data3
+    public function getData(): Data2
     {
         return $this->data;
     }
@@ -67,7 +67,7 @@ class AgentNew implements \JsonSerializable
      * @required
      * @maps data
      */
-    public function setData(Data3 $data): void
+    public function setData(Data2 $data): void
     {
         $this->data = $data;
     }

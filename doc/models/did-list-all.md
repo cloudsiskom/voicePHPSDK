@@ -11,7 +11,7 @@
 |  --- | --- | --- | --- | --- | --- |
 | `response` | `bool` | Required | - | getResponse(): bool | setResponse(bool response): void |
 | `total` | `int` | Required | - | getTotal(): int | setTotal(int total): void |
-| `data` | [`Data13[]`](../../doc/models/data-13.md) | Required | - | getData(): array | setData(array data): void |
+| `data` | [`Data11[]`](../../doc/models/data-11.md) | Required | - | getData(): array | setData(array data): void |
 
 ## Example (as JSON)
 

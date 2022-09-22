@@ -15,7 +15,7 @@
 
 ```json
 {
-  "queue_name": "queue-151-3"
+  "queue_name": "[QUEUE_NAME]"
 }
 ```
 
