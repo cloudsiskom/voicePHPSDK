@@ -70,7 +70,7 @@ $client = new VoiceApiCallLib\VoiceApiCallClient([
 ## Environments
 
 The SDK can be configured to use a different environment for making API calls. Available environments are:
-
+(Please choose to which partner you are connected to)
 ### Fields
 
 | Name | Description |
