@@ -41,7 +41,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `environment` | Environment | The API environment. <br> **Default: `Environment.MDN`** |
+| `environment` | Environment | The API environment. <br> **Default: `Environment.SINTESA`** |
 | `timeout` | `int` | Timeout for API calls in seconds.<br>*Default*: `0` |
 | `enableRetries` | `bool` | Whether to enable retries and backoff feature.<br>*Default*: `false` |
 | `numberOfRetries` | `int` | The number of retries to make.<br>*Default*: `0` |
@@ -75,8 +75,8 @@ The SDK can be configured to use a different environment for making API calls. A
 
 | Name | Description |
 |  --- | --- |
-| MDN | **Default** MDN Partner |
-| SINTESA | MAIN sintesa |
+| MDN | MDN Partner |
+| SINTESA | **Default**  sintesa |
 
 ## Authorization
 
