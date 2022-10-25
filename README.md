@@ -63,7 +63,7 @@ $client = new VoiceApiCallLib\VoiceApiCallClient([
     'password' => 'password',
 
     // Set the environment
-    'environment' => 'MDN',
+    'environment' => '[YOUR ENVIRONMENT]',
 ]);
 ```
 
